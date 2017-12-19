@@ -12,7 +12,7 @@
         <li class="main__list-item"><a href="https://ilyagru.github.io/react-currency-converter/">React Currency Converter</a> – Small currency converter</li>
         <li class="main__list-item"><a href="https://ilyagru.github.io/es-verbs/">ES Verbs</a> – Spanish verbs conjugation</li>
       </ul>
-      <h2>👨🏻‍💻 My Code & Design</h2>
+      <h2>👨🏻‍💻 My Code &#38; Design</h2>
       <ul class="main__list">
         <li class="main__list-item"><a href="https://github.com/ilyagru">Github</a> – Home for my code</li>
         <li class="main__list-item"><a href="https://dribbble.com/ilyagru">Dribbble</a> – Home for my design</li>
@@ -21,7 +21,7 @@
       <p class="main__contact">
         Want to work with me, discuss latest technologies or just say hi?
         <br/>
-        You can contact me <a href="https://t.me/gruzhevski">using Telegram</a> or <a href="mailto:ilya.gruzhevski@gmail.com">via en email</a>.
+        You can contact me <a href="https://t.me/gruzhevski">using Telegram</a> or <a href="mailto:ilya.gruzhevski&#64;gmail.com">via en email</a>.
       </p>
     </div>
   </div>

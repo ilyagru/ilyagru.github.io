@@ -15,12 +15,6 @@ export default {
   components: {
     Main,
     Header
-  },
-
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
   }
 }
 </script>

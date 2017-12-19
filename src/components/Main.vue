@@ -21,7 +21,7 @@
       <p class="main__contact">
         Want to work with me, discuss latest technologies or just say hi?
         <br/>
-        You can contact me <a href="https://t.me/gruzhevski">using Telegram</a> or <a href="mailto:ilya.gruzhevski&#64;gmail.com">via en email</a>.
+        You can contact me <a href="https://t.me/gruzhevski">using Telegram</a> or <a href="mailto:ilya.gruzhevski@gmail.com">via an email</a>.
       </p>
     </div>
   </div>

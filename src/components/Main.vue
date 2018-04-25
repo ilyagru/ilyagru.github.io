@@ -3,6 +3,7 @@
     <div class="main__wrapper">
       <h2>🔨 I Created Things</h2>
       <ul class="main__list">
+        <li class="main__list-item"><a href="https://ilyagru.github.io/CryptoCrunch/">CryptoCrunch</a> – iOS game aboout cryptocurrencies</li>
         <li class="main__list-item"><a href="https://github.com/ilyagru/Movsea">Movsea</a> – Project for recognition of movies</li>
         <li class="main__list-item"><a href="https://ilyagru.github.io/melonade">Melonade</a> – Summer Sticker pack for iMessage</li>
         <li class="main__list-item"><a href="http://remame.us/">Remame</a> – Lightweight app for remembering names</li>

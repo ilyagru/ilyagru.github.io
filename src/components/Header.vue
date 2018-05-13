@@ -4,7 +4,7 @@
         <h1 class="header__title">👋🏻 Hello, I'm Ilya!</h1>
         <p class="header__description">
         I'm an entrepreneur &#38; iOS, Frontend developer from Poland.<br/>
-        You can find me on <a href="https://twitter.com/ilyagruzhevski">Twitter</a>, <a href="https://www.instagram.com/gruzhevski/">Instagram</a>, and <a href="https://github.com/ilyagru">GitHub</a>.
+        You can find me on <a href="https://www.instagram.com/gruzhevski/">Instagram</a> and <a href="https://github.com/ilyagru">GitHub</a>.
         </p>
     </div>
   </div>

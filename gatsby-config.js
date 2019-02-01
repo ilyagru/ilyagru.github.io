@@ -87,6 +87,7 @@ module.exports = {
         theme_color: `#DAA520`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
+        legacy: true,
       },
     },
     `gatsby-plugin-offline`,

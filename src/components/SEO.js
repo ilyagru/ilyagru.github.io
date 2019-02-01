@@ -50,13 +50,6 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
-              // TODO: Check if icons are generated correctly
-              // <link rel="apple-touch-icon" href="assets/apple-touch-icon-76.png">
-              // <link rel="apple-touch-icon" sizes="76x76" href="assets/apple-touch-icon-76.png">
-              // <link rel="apple-touch-icon" sizes="120x120" href="assets/apple-touch-icon-120.png">
-              // <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-touch-icon-152.png">
-              // <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png">
-              // <link rel="icon" sizes="192x192" href="assets/apple-touch-icon-192.png"></link>
             ].concat(keywords.length > 0 ? {
               name: `keywords`,
               content: keywords.join(`, `),

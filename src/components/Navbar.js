@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import posed, { PoseGroup } from 'react-pose';
 
 import constants from '../utils/constants';
@@ -79,24 +79,34 @@ const activeLinkStyle = {
 
 function Navbar({ isMenuOpen }) {
   return (
-    <PoseGroup>
-      {isMenuOpen &&
-        <NavContainer
-          key="nav-container"
-          isMenuOpen={isMenuOpen}
-          pose={isMenuOpen ? 'enter' : 'exit'}
-        >
-          <Nav >
-            <NavList>
-              <NavLink><Link activeStyle={activeLinkStyle} to="/">All Posts</Link></NavLink>
-              <NavLink><Link activeStyle={activeLinkStyle} to="/built-things">What I Built</Link></NavLink>
-              <NavLink><Link activeStyle={activeLinkStyle} to="/my-music">What I Listen To</Link></NavLink>
-              <NavLink><Link activeStyle={activeLinkStyle} to="/contact">Contact</Link></NavLink>
-            </NavList>
-          </Nav>
-        </NavContainer>
-      }
-    </PoseGroup>
+    <StaticQuery
+      query={navbarQuery}
+      render={data => {
+        const { siteUrl } = data.site.siteMetadata;
+
+        return (
+          <PoseGroup>
+            {isMenuOpen &&
+              <NavContainer
+                key="nav-container"
+                isMenuOpen={isMenuOpen}
+                pose={isMenuOpen ? 'enter' : 'exit'}
+              >
+                <Nav >
+                  <NavList>
+                    <NavLink><Link activeStyle={activeLinkStyle} to="/">All Posts</Link></NavLink>
+                    <NavLink><Link activeStyle={activeLinkStyle} to="/built-things">What I Built</Link></NavLink>
+                    <NavLink><Link activeStyle={activeLinkStyle} to="/my-music">What I Listen To</Link></NavLink>
+                    <NavLink><Link activeStyle={activeLinkStyle} to="/contact">Contact</Link></NavLink>
+                    <NavLink><a href={`feed:${siteUrl}/rss.xml`} target="_blank" rel="noopener noreferrer">RSS feed</a></NavLink>
+                  </NavList>
+                </Nav>
+              </NavContainer>
+            }
+          </PoseGroup>
+        );
+      }}
+    />
   );
 }
 
@@ -107,5 +117,15 @@ Navbar.defaultProps = {
 Navbar.propTypes = {
   isMenuOpen: PropTypes.bool,
 };
+
+const navbarQuery = graphql`
+  query NavbarQuery {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`;
 
 export default Navbar;

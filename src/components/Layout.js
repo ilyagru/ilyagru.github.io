@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import Navbar from './Navbar';
 import MenuButton from './MenuButton';
-import { LayoutContainer, Title, TitleSecondary, TitleLink } from './Layout.components';
+import { LayoutContainer, HeaderContainer, Title, TitleSecondary, TitleLink } from './Layout.components';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -13,12 +13,7 @@ class Layout extends React.Component {
     };
   }
 
-  HeaderContent = () => (
-    <Fragment>
-      <TitleLink title={this.props.title} />
-      <MenuButton isMenuOpen={this.state.isMenuOpen} onClick={this.onHandleMenuOpen} />
-    </Fragment>
-  )
+  HeaderContent = () => <TitleLink title={this.props.title} />
 
   onHandleMenuOpen = () => {
     this.setState({
@@ -29,9 +24,10 @@ class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
+    const isHome = location.pathname === rootPath;
     let header;
 
-    if (location.pathname === rootPath) {
+    if (isHome) {
       header = (
         <Title>
           <this.HeaderContent />
@@ -47,7 +43,10 @@ class Layout extends React.Component {
 
     return (
       <LayoutContainer>
-        {header}
+        <HeaderContainer isHome={isHome}>
+          {header}
+          <MenuButton isMenuOpen={this.state.isMenuOpen} onClick={this.onHandleMenuOpen} />
+        </HeaderContainer>
         <Navbar isMenuOpen={this.state.isMenuOpen} />
         {children}
         <footer>

@@ -14,6 +14,7 @@ const BaseButton = styled.button`
   position: relative;
   z-index: 20;
   color: ${constants.blackColor};
+  font-weight: 800;
 
   ${({ isMenuOpen }) => isMenuOpen ? css`
     transform: translate(15px) rotate(-90deg);

@@ -10,7 +10,10 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
+    const author = this.props.data.site.siteMetadata.author;
     const { previous, next } = this.props.pageContext;
+    const twitterShareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(`${post.frontmatter.title} by ${author} ${this.props.location.href}`);
+    const reportMistakeUrl = 'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -20,6 +23,12 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </DateComponent>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <br />
+        <p>
+          <a href={twitterShareUrl} target="_blank" rel="nofollow noopener noreferrer">Tweet this</a>
+          {' | '}
+          <a href={reportMistakeUrl} target="_blank" rel="nofollow noopener noreferrer">Report a mistake</a>
+        </p>
         <Separator />
         <Bio />
         <ul

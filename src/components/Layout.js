@@ -43,12 +43,16 @@ class Layout extends React.Component {
 
     return (
       <LayoutContainer>
-        <HeaderContainer isHome={isHome}>
-          {header}
-          <MenuButton isMenuOpen={this.state.isMenuOpen} onClick={this.onHandleMenuOpen} />
-        </HeaderContainer>
-        <Navbar isMenuOpen={this.state.isMenuOpen} />
-        {children}
+        <header>
+          <HeaderContainer isHome={isHome}>
+            {header}
+            <MenuButton isMenuOpen={this.state.isMenuOpen} onClick={this.onHandleMenuOpen} />
+          </HeaderContainer>
+          <Navbar isMenuOpen={this.state.isMenuOpen} />
+        </header>
+        <main>
+          {children}
+        </main>
         <footer>
           <TitleLink title={`${title} `} />
           &copy; {new Date().getFullYear()}, from Europe with

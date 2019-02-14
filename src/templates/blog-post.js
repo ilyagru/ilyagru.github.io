@@ -18,11 +18,13 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <DateComponent>
-          {post.frontmatter.date}
-        </DateComponent>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <article>
+          <h1>{post.frontmatter.title}</h1>
+          <DateComponent>
+            {post.frontmatter.date}
+          </DateComponent>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
         <br />
         <p>
           <a href={twitterShareUrl} target="_blank" rel="nofollow noopener noreferrer">Tweet this</a>

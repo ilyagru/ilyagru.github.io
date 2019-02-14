@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { rhythm, scale } from '../utils/typography';
 
 export const Separator = styled.hr`
-  marginBottom: ${rhythm(1)};
+  margin-bottom: ${rhythm(1)};
 `;
 
 const DateContainer = styled.p`

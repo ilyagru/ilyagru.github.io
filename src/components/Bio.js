@@ -29,7 +29,7 @@ function Bio({ slug }) {
         const { author, social } = data.site.siteMetadata;
 
         return (
-          <div
+          <aside
             style={{
               display: `flex`,
               marginBottom: rhythm(2.5),
@@ -55,7 +55,7 @@ function Bio({ slug }) {
                 GitHub
               </a>.
             </p>
-          </div>
+          </aside>
         );
       }}
     />

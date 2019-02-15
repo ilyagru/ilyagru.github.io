@@ -55,7 +55,7 @@ There are many articles about publishing applications, so I will not describe th
 
 <p style="border-radius: 3px; overflow: hidden; line-height: 0;">
   <iframe
-    src="https://www.youtube.com/embed/77reFlMS6d8"
+    src="https://www.youtube.com/embed/77reFlMS6d8?rel=0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
   ></iframe>

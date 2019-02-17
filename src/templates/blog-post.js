@@ -14,13 +14,14 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
     const twitterShareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(`${post.frontmatter.title} by ${author} ${this.props.location.href}`);
     const reportMistakeUrl = 'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
+    const metaImage = `${this.props.data.site.siteMetadata.siteUrl}${post.frontmatter.featuredImage.childImageSharp.fixed.src}`;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.excerpt}
-          image={post.frontmatter.featuredImage.childImageSharp.fixed.src}
+          image={metaImage}
         />
         <article>
           <h1>{post.frontmatter.title}</h1>
@@ -74,6 +75,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

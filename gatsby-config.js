@@ -101,7 +101,7 @@ module.exports = {
                 guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
                 custom_elements: [{ 'content:encoded': edge.node.html }],
                 enclosure: {
-                  url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`,
+                  url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`.replace('https', 'http'),
                   type: 'image/png',
                 },
               });

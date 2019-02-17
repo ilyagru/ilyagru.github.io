@@ -1,6 +1,7 @@
 ---
 title: Some ideas where to start programming
 date: '2019-02-07T12:18:03.284Z'
+featuredImage: './start-learning-dev-featured-image.png'
 ---
 
 Some people ask me how to start doing some things in the programming world. So I decided to post some kind of answer with a few ideas to get you started. This is not the complete guide to programming.

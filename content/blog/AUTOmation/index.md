@@ -1,6 +1,7 @@
 ---
 title: When automation becomes AUTOmation
 date: '2019-02-15T17:27:03.284Z'
+featuredImage: './AUTOmation-featured-image.png'
 ---
 
 My idea and participation in the Hackathon from High Mobility in Tallinn. How it was, what I developed, what experience I got.

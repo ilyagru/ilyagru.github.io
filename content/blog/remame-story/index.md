@@ -1,6 +1,7 @@
 ---
 title: How I built my first iOS app & got to TOP-25 of the Belarusian App Store
 date: '2019-01-28T22:12:03.284Z'
+featuredImage: './remame-story-featured-image.png'
 ---
 
 _Originally written April 20, 2017_

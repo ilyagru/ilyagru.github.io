@@ -3,12 +3,19 @@ import PT from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords, title, image }) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription = description || data.site.siteMetadata.description;
+        const metaImage = image ? [{
+          property: `og:image`,
+          content: image,
+        }, {
+          property: `twitter:image`,
+          content: image,
+        }] : [];
 
         return (
           <Helmet
@@ -54,10 +61,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `google-site-verification`,
                 content: `KGqdfp9zu891keaiGwHM4etp_F_vU-Wav4LfQ3nBamc`,
               },
-            ].concat(keywords.length > 0 ? {
-              name: `keywords`,
-              content: keywords.join(`, `),
-            } : []).concat(meta)}
+            ]
+            .concat(keywords.length > 0 ? { name: `keywords`, content: keywords.join(`, `) } : [])
+            .concat(meta)
+            .concat(metaImage)}
           />
         );
       }}
@@ -69,6 +76,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  image: null,
 };
 
 SEO.propTypes = {
@@ -77,6 +85,7 @@ SEO.propTypes = {
   meta: PT.array,
   keywords: PT.arrayOf(PT.string),
   title: PT.string.isRequired,
+  image: PT.string,
 };
 
 export default SEO;

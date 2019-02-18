@@ -6,31 +6,37 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 
 ## Quick start
 
-1.  **Start developing.**
+1.  **Start developing**
 
     ```sh
-    gatsby develop
+    npm start
     ```
 
-1.  **Open the source code and start editing!**
+1.  **Open the source code and start editing**
 
     Your site is now running at `http://localhost:8000`!
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-1.  **Production.**
+1.  **Production**
 
     ```sh
-    gatsby build
+    npm run build
     ```
 
-1.  **Test locally.**
+1.  **Test locally**
 
     ```sh
-    gatsby serve
+    npm run serve
     ```
 
     Your site is now running at `http://localhost:9000`!
+
+1.  **Run tests**
+
+    ```sh
+    npm test
+    ```
 
 1.  **Deploy**
 

@@ -1,10 +1,19 @@
 import React from 'react';
+import PT from 'prop-types';
 
 import Navbar from './Navbar';
 import MenuButton from './MenuButton';
 import { LayoutContainer, HeaderContainer, Title, TitleSecondary, TitleLink } from './Layout.components';
 
 class Layout extends React.Component {
+  static propTypes = {
+    title: PT.string.isRequired,
+    children: PT.element.isRequired,
+    location: PT.shape({
+      pathname: PT.string.isRequired,
+    }),
+  }
+
   constructor(props) {
     super(props);
 

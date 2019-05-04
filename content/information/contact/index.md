@@ -1,5 +1,6 @@
 ---
 title: Let's collaborate?
+summary: Want to work with me, discuss latest technologies or just say hi? You can contact me!
 ---
 
 1. [Github](https://github.com/ilyagru) – Home for my code

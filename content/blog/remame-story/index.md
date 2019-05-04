@@ -2,6 +2,7 @@
 title: How I built my first iOS app & got to TOP-25 of the Belarusian App Store
 date: '2019-01-28T22:12:03.284Z'
 featuredImage: './remame-story-featured-image.png'
+summary: Hey. I will tell you how I made my first small app in Swift 3 in Xcode, launched and got into the TOP-25 paid applications of the Belarusian App Store, as well as on the 3rd place in the Productivity category. What I learned, what mistakes I made, what advice I can give.
 ---
 
 _Originally written April 20, 2017_

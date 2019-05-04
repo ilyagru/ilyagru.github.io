@@ -14,7 +14,7 @@ class InformationTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={information.frontmatter.title} description={information.excerpt} />
+        <SEO title={information.frontmatter.title} description={information.frontmatter.summary || information.excerpt} />
         <h1>{information.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: information.html }} />
         <Separator />
@@ -40,6 +40,7 @@ export const informationQuery = graphql`
       excerpt(pruneLength: 300)
       frontmatter {
         title
+        summary
       }
     }
   }

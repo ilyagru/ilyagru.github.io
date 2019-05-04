@@ -1,5 +1,6 @@
 ---
 title: What I already built
+summary: Projects that I already built.
 ---
 
 * <a href="https://github.com/ilyagru/AUTOmation" rel="noopener norefferer" target="_blank">AUTOmation</a> – Demo app for the "High Mobility Hack" hackathon

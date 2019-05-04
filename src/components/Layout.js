@@ -8,7 +8,7 @@ import { LayoutContainer, HeaderContainer, Title, TitleSecondary, TitleLink } fr
 class Layout extends React.Component {
   static propTypes = {
     title: PT.string.isRequired,
-    children: PT.element.isRequired,
+    children: PT.oneOfType([PT.node, PT.arrayOf(PT.node)]).isRequired,
     location: PT.shape({
       pathname: PT.string.isRequired,
     }),

@@ -7,6 +7,7 @@ export default {
   greenColor: '#86B300',
   violetColor: '#A37ACC',
   blueColor: '#399EE6',
+  redColor: '#F28779',
   accentBackgroundColor: '#FFFAEF',
   backgroundColor: 'rgb(248, 248, 250)',
   backgroundColorTransparent: 'rgba(248,248,255,.7)',

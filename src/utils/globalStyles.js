@@ -65,6 +65,12 @@ export default {
     color: constants.violetColor,
   },
   'code .boolean': {
+    color: constants.violetColor,
+  },
+  'code .function': {
+    color: constants.redColor,
+  },
+  'code .builtin': {
     color: constants.blueColor,
   },
 };;

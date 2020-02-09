@@ -1,72 +1,74 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import PT from 'prop-types';
 
-import { rhythm, scale } from "../utils/typography"
+import Navbar from './Navbar';
+import MenuButton from './MenuButton';
+import { LayoutContainer, HeaderContainer, Title, TitleSecondary, TitleLink } from './Layout.components';
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+class Layout extends React.Component {
+  static propTypes = {
+    title: PT.string.isRequired,
+    children: PT.oneOfType([PT.node, PT.arrayOf(PT.node)]).isRequired,
+    location: PT.shape({
+      pathname: PT.string.isRequired,
+    }),
+  };
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMenuOpen: false,
+    };
   }
-  return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </div>
-  )
+
+  HeaderContent = () => <TitleLink title={this.props.title} />;
+
+  onHandleMenuOpen = () => {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen,
+    });
+  };
+
+  render() {
+    const { location, title, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    const isHome = location.pathname === rootPath;
+    let header;
+
+    if (isHome) {
+      header = (
+        <Title>
+          <this.HeaderContent />
+        </Title>
+      );
+    } else {
+      header = (
+        <TitleSecondary>
+          <this.HeaderContent />
+        </TitleSecondary>
+      );
+    }
+
+    return (
+      <LayoutContainer>
+        <header>
+          <HeaderContainer isHome={isHome}>
+            {header}
+            <MenuButton isMenuOpen={this.state.isMenuOpen} onClick={this.onHandleMenuOpen} />
+          </HeaderContainer>
+          <Navbar isMenuOpen={this.state.isMenuOpen} />
+        </header>
+        <main>{children}</main>
+        <footer>
+          <TitleLink title={`${title} `} />
+          &copy; {new Date().getFullYear()}, from Europe with
+          {` `}
+          🧡
+        </footer>
+      </LayoutContainer>
+    );
+  }
 }
 
-export default Layout
+export default Layout;

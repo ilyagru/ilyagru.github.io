@@ -54,26 +54,20 @@ module.exports = {
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-external-links`
+          `gatsby-remark-external-links`,
         ],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          `UA-111438825-1`, // Google Analytics / GA
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        pluginConfig: {
-          head: false,
-          respectDNT: true,
-        },
+        // The property ID; the tracking code won't be generated without it
+        trackingId: `UA-111438825-1`,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
       },
     },
     {
@@ -91,23 +85,27 @@ module.exports = {
             }
           }
         `,
-        feeds: [{
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map(edge => {
-              return Object.assign({}, edge.node.frontmatter, {
-                description: edge.node.frontmatter.summary || edge.node.excerpt,
-                date: edge.node.frontmatter.date,
-                url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
-                guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
-                custom_elements: [{ 'content:encoded': edge.node.html }],
-                enclosure: {
-                  url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`.replace('https', 'http'),
-                  type: 'image/png',
-                },
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.summary || edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  enclosure: {
+                    url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`.replace(
+                      'https',
+                      'http'
+                    ),
+                    type: 'image/png',
+                  },
+                });
               });
-            });
-          },
-          query: `
+            },
+            query: `
             {
               allMarkdownRemark(
                 limit: 1000,
@@ -135,9 +133,10 @@ module.exports = {
               }
             }
           `,
-          output: "/rss.xml",
-          title: "Gruzhevstasy RSS feed",
-        }],
+            output: '/rss.xml',
+            title: 'Gruzhevstasy RSS feed',
+          },
+        ],
       },
     },
     {

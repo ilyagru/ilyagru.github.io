@@ -22,7 +22,9 @@ class NotFoundPage extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <p>You just hit a route that doesn&#39;t exist... Try <Link to="/">Home</Link>.</p>
+        <p>
+          You just hit a route that doesn&#39;t exist... Try <Link to="/">Home</Link>.
+        </p>
       </Layout>
     );
   }

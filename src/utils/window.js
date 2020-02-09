@@ -20,8 +20,8 @@ function preventDefault(e) {
 }
 function preventDefaultForScrollKeys(e) {
   if (keys[e.keyCode]) {
-      preventDefault(e);
-      return false;
+    preventDefault(e);
+    return false;
   }
 }
 
@@ -30,7 +30,8 @@ export const disableScroll = () => {
     return;
   }
 
-  if (window.addEventListener) { // older FF
+  if (window.addEventListener) {
+    // older FF
     window.addEventListener('DOMMouseScroll', preventDefault, false);
   }
   window.onwheel = preventDefault; // modern standard

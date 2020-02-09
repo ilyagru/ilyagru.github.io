@@ -1,24 +1,9 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true,
+  globals: {
+    __PATH_PREFIX__: true,
   },
-  "plugins": [
-    "react", "babel",
-  ],
-  "globals": {
-    "graphql": false,
+  extends: `react-app`,
+  rules: {
+    semi: 2,
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 2018,
-    "ecmaFeatures": {
-      "jsx": true,
-      "classes": true,
-    },
-  },
-  "rules": {
-    "semi": 2,
-  },
-}
+};

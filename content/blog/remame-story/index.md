@@ -69,13 +69,13 @@ During the first two weeks, the application even managed to get into the TOP 25 
 
 ## Tips that I didn’t mention
 
-* Try to split the code into files as much as possible: if, for example, there is a lot of logic responsible for storing data, then put it into a separate file;
-* There are two types of input fields in the interface: `UITextField` and `UITextView`. The second is used for multi-line text, only the first has the familiar “placeholder” property. Therefore, if you want to make a large input field with a placeholder, you will have to be wise. One solution is to create a text element on top of the field, which would disappear when entering text;
-* The cell class `UITableViewCell` for the `UITableView` should always be created in a separate file;
-* Start the promotion of an application at least 2 months before the release, even if you are not sure that you will publish it;
-* You shouldn’t write to large editorial offices or Apple about advertising or promoting your first application - there’s little use for that. It’s better to post small reviews from bloggers or on social networking sites on relevant topics;
-* Do not expect big earnings in the absence of investments and regular work, unless, of course, you have millions of subscribers in social networks. By the way, payments to developers occur only when more than $150 is earned for the financial month;
-* Don't give up and get things done. Any problem has a good solution.
+- Try to split the code into files as much as possible: if, for example, there is a lot of logic responsible for storing data, then put it into a separate file;
+- There are two types of input fields in the interface: `UITextField` and `UITextView`. The second is used for multi-line text, only the first has the familiar “placeholder” property. Therefore, if you want to make a large input field with a placeholder, you will have to be wise. One solution is to create a text element on top of the field, which would disappear when entering text;
+- The cell class `UITableViewCell` for the `UITableView` should always be created in a separate file;
+- Start the promotion of an application at least 2 months before the release, even if you are not sure that you will publish it;
+- You shouldn’t write to large editorial offices or Apple about advertising or promoting your first application - there’s little use for that. It’s better to post small reviews from bloggers or on social networking sites on relevant topics;
+- Do not expect big earnings in the absence of investments and regular work, unless, of course, you have millions of subscribers in social networks. By the way, payments to developers occur only when more than \$150 is earned for the financial month;
+- Don't give up and get things done. Any problem has a good solution.
 
 ### More links that to one degree or another helped me
 

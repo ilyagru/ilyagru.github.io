@@ -11,7 +11,7 @@ My idea and participation in the Hackathon from High Mobility in Tallinn. How it
 
 [The hackathon](https://mobilityhack.splashthat.com) organized by [High Mobility Team](https://company.high-mobility.com/about-us) took place in Tallinn, the capital of Estonia in November 2018. The goal of the hackathon was for software developers, designers and entrepreneurs to get a real feel for developing apps for connected cars using unlimited access to the [HIGH MOBILITY Developer Center](https://high-mobility.com/get-started). A platform for development and testing applications using vehicle emulators from the giants like Porsche and Mercedes-Benz. Also, there were cash prizes totaling €3000 for the winning teams.
 
-> A __connected car__ is a car that is equipped with Internet access, and usually also with a wireless local area network. This allows the car to share internet access, and hence data, with other devices both inside as well as outside the vehicle. Often, the car is also outfitted with special technologies that tap into the internet or wireless LAN and provide additional benefits to the driver. — [Wikipedia](https://en.wikipedia.org/wiki/Connected_car)
+> A **connected car** is a car that is equipped with Internet access, and usually also with a wireless local area network. This allows the car to share internet access, and hence data, with other devices both inside as well as outside the vehicle. Often, the car is also outfitted with special technologies that tap into the internet or wireless LAN and provide additional benefits to the driver. — [Wikipedia](https://en.wikipedia.org/wiki/Connected_car)
 
 ## The Issue
 
@@ -44,9 +44,9 @@ It could have a fantastic impact on our lives what could be seen through these b
 
 This idea can easily evolve into even wider life integration. I'm pointing out 3 cases.
 
-1. __Machine Learning__ — giving personalized experiences, learning customer routines and real-time suggestions on what could also be automated.
-1. __Integration__ with Voice Assistants, Home Pods, entrance cards, etc. There is an infinite number of different actions to perform. Parking your car when opening the house door, preparing your car when leaving work, preparing your car depending on mood, etc. The more available APIs, the more automated tasks.
-1. __Autopilot__ — In case of autopilot cars, to be able to complete scenarios such as “Pick up my children from school and get them home”.
+1. **Machine Learning** — giving personalized experiences, learning customer routines and real-time suggestions on what could also be automated.
+1. **Integration** with Voice Assistants, Home Pods, entrance cards, etc. There is an infinite number of different actions to perform. Parking your car when opening the house door, preparing your car when leaving work, preparing your car depending on mood, etc. The more available APIs, the more automated tasks.
+1. **Autopilot** — In case of autopilot cars, to be able to complete scenarios such as “Pick up my children from school and get them home”.
 
 ## Uniqueness
 

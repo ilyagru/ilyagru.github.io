@@ -9,18 +9,14 @@ export const Separator = styled.hr`
 `;
 
 const DateContainer = styled.p`
-  ${{...scale(-1 / 5)}};
+  ${{ ...scale(-1 / 5) }};
   display: block;
   margin-bottom: ${rhythm(1)};
   margin-top: ${rhythm(-1)};
 `;
 
 function DateComponent({ children }) {
-  return (
-    <DateContainer>
-      {children}
-    </DateContainer>
-  );
+  return <DateContainer>{children}</DateContainer>;
 }
 
 DateComponent.propTypes = {

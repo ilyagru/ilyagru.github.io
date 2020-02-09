@@ -4,9 +4,7 @@ import Wordpress2016Theme from 'typography-theme-wordpress-2016';
 
 import globalStyles from './globalStyles';
 
-Wordpress2016Theme.plugins = [
-  new CodePlugin(),
-];
+Wordpress2016Theme.plugins = [new CodePlugin()];
 Wordpress2016Theme.overrideThemeStyles = () => {
   return globalStyles;
 };

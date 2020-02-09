@@ -14,7 +14,10 @@ class InformationTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={information.frontmatter.title} description={information.frontmatter.summary || information.excerpt} />
+        <SEO
+          title={information.frontmatter.title}
+          description={information.frontmatter.summary || information.excerpt}
+        />
         <h1>{information.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: information.html }} />
         <Separator />
@@ -33,8 +36,7 @@ export const informationQuery = graphql`
         title
       }
     }
-    markdownRemark(
-      fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       excerpt(pruneLength: 300)

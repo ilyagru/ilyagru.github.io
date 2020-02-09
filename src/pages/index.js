@@ -50,7 +50,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fields: { source: { eq: "blog" } } }
-      sort: { fields: [frontmatter___date], order: DESC }) {
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 300)

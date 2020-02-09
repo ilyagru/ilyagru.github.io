@@ -137,5 +137,3 @@ So simply experiment with this. And maybe you could find it a good fit to your p
 
 1. [NSAttributedString Apple Documentation](https://developer.apple.com/documentation/foundation/nsattributedstring)
 1. [W3Schools CSS reference](https://www.w3schools.com/cssref/)
-
-

@@ -36,26 +36,29 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${({ isHome }) => isHome ? css`
-    margin-bottom: ${rhythm(1.5)};
-  ` : css`
-    margin-bottom: ${rhythm(1)};
-  `}
+  ${({ isHome }) =>
+    isHome
+      ? css`
+          margin-bottom: ${rhythm(1.5)};
+        `
+      : css`
+          margin-bottom: ${rhythm(1)};
+        `}
 `;
 
 export const Title = styled.h1`
-  ${{...scale(1.5)}};
+  ${{ ...scale(1.5) }};
   margin-bottom: 0;
   margin-top: 0;
 
   @media (max-width: 600px) {
-    ${{...scale(1.3)}};
+    ${{ ...scale(1.3) }};
   }
   @media (max-width: 500px) {
-    ${{...scale(1.1)}};
+    ${{ ...scale(1.1) }};
   }
   @media (max-width: 440px) {
-    ${{...scale(0.6)}};
+    ${{ ...scale(0.6) }};
   }
 `;
 

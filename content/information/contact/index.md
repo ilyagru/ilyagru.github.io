@@ -8,4 +8,4 @@ summary: Want to work with me, discuss latest technologies or just say hi? You c
 3. [LinkedIn](https://www.linkedin.com/in/ilya-gruzhevski) - Home for my CV
 
 Want to work with me, discuss latest technologies or just say hi?
-You can contact me using using Telegram *__@gruzhevski__* or via email *__ilya.gruzhevski[at]gmail.com__*.
+You can contact me using using Telegram _**@gruzhevski**_ or via email _**ilya.gruzhevski[at]gmail.com**_.

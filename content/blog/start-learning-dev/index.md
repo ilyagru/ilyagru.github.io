@@ -78,13 +78,13 @@ As for Frontend books, I can advise these. Just look if there is a newer edition
 
 ### Anything else?
 
-You can try any other programming language, such as [Python](https://www.python.org) or [Ruby](https://www.ruby-lang.org/en/). They are mainly used for backend stuff. [Java](https://docs.oracle.com/javase/tutorial/index.html) and [Kotlin](https://kotlinlang.org) are needed for Android. Maybe some modern languages like [Go](https://golang.org), [R](https://www.r-project.org), or [Rust](https://www.rust-lang.org). I would not recommend touching the languages ​​of the [C](https://en.wikipedia.org/wiki/C_(programming_language)), [C++](http://www.cplusplus.com) family for a newcomer at all. There are a lot to choose from.
+You can try any other programming language, such as [Python](https://www.python.org) or [Ruby](https://www.ruby-lang.org/en/). They are mainly used for backend stuff. [Java](https://docs.oracle.com/javase/tutorial/index.html) and [Kotlin](https://kotlinlang.org) are needed for Android. Maybe some modern languages like [Go](https://golang.org), [R](https://www.r-project.org), or [Rust](https://www.rust-lang.org). I would not recommend touching the languages ​​of the [C](<https://en.wikipedia.org/wiki/C_(programming_language)>), [C++](http://www.cplusplus.com) family for a newcomer at all. There are a lot to choose from.
 
 1. [The TOP programming languages 2018](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2018)
 1. [What Programming Language Should a Beginner Learn in 2019](https://www.codementor.io/codementorteam/beginner-programming-language-job-salary-community-7s26wmbm6)
 1. [What are Computer Programming Languages](https://www.computerscience.org/resources/computer-programming-languages/)
 
- It's difficult to say here more because I don't have a lot of experience with other programming languages. Just try if it sounds interesting to you! There are a lot of articles and helping tools like [bestprogramminglanguagefor.me](http://www.bestprogramminglanguagefor.me/) throughout the Internet. These picture could also suggest a correct decision.
+It's difficult to say here more because I don't have a lot of experience with other programming languages. Just try if it sounds interesting to you! There are a lot of articles and helping tools like [bestprogramminglanguagefor.me](http://www.bestprogramminglanguagefor.me/) throughout the Internet. These picture could also suggest a correct decision.
 
 ![Programming languages](./programming-infographics.png)
 
@@ -114,4 +114,4 @@ I tried to help objectively — I hope I helped with something. Of course this l
 3. [TapCoding](http://tapcoding.com)
 4. [Encode](https://itunes.apple.com/us/app/encode-learn-to-code/id1198851756)
 
-[Duolingo](https://www.duolingo.com) and [Lingvist](https://lingvist.com) for natural languages, [Vanido](https://vanido.io) for singing, etc. And do not be afraid to ask for help from the more experienced developers, many are responsible and can help with anything. __Good luck!__
+[Duolingo](https://www.duolingo.com) and [Lingvist](https://lingvist.com) for natural languages, [Vanido](https://vanido.io) for singing, etc. And do not be afraid to ask for help from the more experienced developers, many are responsible and can help with anything. **Good luck!**

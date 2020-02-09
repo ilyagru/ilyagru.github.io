@@ -49,7 +49,7 @@ export default {
     width: '100%',
     minHeight: '450px',
   },
-  'pre': {
+  pre: {
     backgroundColor: constants.backgroundColor,
   },
   'code .keyword': {
@@ -73,4 +73,4 @@ export default {
   'code .builtin': {
     color: constants.blueColor,
   },
-};;
+};

@@ -12,29 +12,29 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title;
     const author = this.props.data.site.siteMetadata.author;
     const { previous, next } = this.props.pageContext;
-    const twitterShareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(`${post.frontmatter.title} by ${author} ${this.props.location.href}`);
+    const twitterShareUrl =
+      'https://twitter.com/intent/tweet?text=' +
+      encodeURIComponent(`${post.frontmatter.title} by ${author} ${this.props.location.href}`);
     const reportMistakeUrl = 'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
     const metaImage = `${this.props.data.site.siteMetadata.siteUrl}${post.frontmatter.featuredImage.childImageSharp.fixed.src}`;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.summary || post.excerpt}
-          image={metaImage}
-        />
+        <SEO title={post.frontmatter.title} description={post.frontmatter.summary || post.excerpt} image={metaImage} />
         <article>
           <h1>{post.frontmatter.title}</h1>
-          <DateComponent>
-            {post.frontmatter.date}
-          </DateComponent>
+          <DateComponent>{post.frontmatter.date}</DateComponent>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
         <br />
         <p>
-          <a href={twitterShareUrl} target="_blank" rel="nofollow noopener noreferrer">Tweet this</a>
+          <a href={twitterShareUrl} target="_blank" rel="nofollow noopener noreferrer">
+            Tweet this
+          </a>
           {' | '}
-          <a href={reportMistakeUrl} target="_blank" rel="nofollow noopener noreferrer">Report a mistake</a>
+          <a href={reportMistakeUrl} target="_blank" rel="nofollow noopener noreferrer">
+            Report a mistake
+          </a>
         </p>
         <Separator />
         <Bio />

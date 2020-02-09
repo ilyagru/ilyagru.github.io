@@ -12,7 +12,7 @@ class Layout extends React.Component {
     location: PT.shape({
       pathname: PT.string.isRequired,
     }),
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -22,13 +22,13 @@ class Layout extends React.Component {
     };
   }
 
-  HeaderContent = () => <TitleLink title={this.props.title} />
+  HeaderContent = () => <TitleLink title={this.props.title} />;
 
   onHandleMenuOpen = () => {
     this.setState({
       isMenuOpen: !this.state.isMenuOpen,
     });
-  }
+  };
 
   render() {
     const { location, title, children } = this.props;
@@ -59,9 +59,7 @@ class Layout extends React.Component {
           </HeaderContainer>
           <Navbar isMenuOpen={this.state.isMenuOpen} />
         </header>
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
         <footer>
           <TitleLink title={`${title} `} />
           &copy; {new Date().getFullYear()}, from Europe with

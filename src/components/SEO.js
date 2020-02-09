@@ -9,13 +9,18 @@ function SEO({ description, lang, meta, keywords, title, image }) {
       query={detailsQuery}
       render={data => {
         const metaDescription = description || data.site.siteMetadata.description;
-        const metaImage = image ? [{
-          property: `og:image`,
-          content: image,
-        }, {
-          property: `twitter:image`,
-          content: image,
-        }] : [];
+        const metaImage = image
+          ? [
+              {
+                property: `og:image`,
+                content: image,
+              },
+              {
+                property: `twitter:image`,
+                content: image,
+              },
+            ]
+          : [];
 
         return (
           <Helmet
@@ -62,9 +67,9 @@ function SEO({ description, lang, meta, keywords, title, image }) {
                 content: `KGqdfp9zu891keaiGwHM4etp_F_vU-Wav4LfQ3nBamc`,
               },
             ]
-            .concat(keywords.length > 0 ? { name: `keywords`, content: keywords.join(`, `) } : [])
-            .concat(meta)
-            .concat(metaImage)}
+              .concat(keywords.length > 0 ? { name: `keywords`, content: keywords.join(`, `) } : [])
+              .concat(meta)
+              .concat(metaImage)}
           />
         );
       }}

@@ -16,13 +16,16 @@ const BaseButton = styled.button`
   color: ${constants.blackColor};
   font-weight: 800;
 
-  ${({ isMenuOpen }) => isMenuOpen ? css`
-    transform: translate(15px) rotate(-90deg);
-    background-color: ${constants.accentColor};
-    color: ${constants.whiteColor};
-  ` : css`
-    transform: rotate(0deg);
-  `}
+  ${({ isMenuOpen }) =>
+    isMenuOpen
+      ? css`
+          transform: translate(15px) rotate(-90deg);
+          background-color: ${constants.accentColor};
+          color: ${constants.whiteColor};
+        `
+      : css`
+          transform: rotate(0deg);
+        `}
 `;
 
 function MenuButton({ isMenuOpen, onClick }) {

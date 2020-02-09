@@ -49,11 +49,13 @@ function Bio({ slug }) {
               }}
             />
             <p>
-              {done} by <strong>{author}</strong>, a diversified developer who lives and works in Europe building nice things. On this blog I post not only programming stuff. You can also find me on
+              {done} by <strong>{author}</strong>, a diversified developer who lives and works in Europe building nice
+              things. On this blog I post not only programming stuff. You can also find me on
               {` `}
               <a href={`https://github.com/${social.github}`} target="_blank" rel="nofollow noopener noreferrer">
                 GitHub
-              </a>.
+              </a>
+              .
             </p>
           </aside>
         );

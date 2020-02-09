@@ -3,7 +3,7 @@ import PT from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
-import { rhythm } from '../../../ilyagru.github.io-2-frontend/src/utils/typography';
+import { rhythm } from '../utils/typography';
 
 function Bio({ slug }) {
   let done;

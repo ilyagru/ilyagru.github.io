@@ -1,5 +1,7 @@
 # Personal website & blog
 
+[![CircleCI](https://circleci.com/gh/ilyagru/ilyagru.github.io.svg?style=svg)](https://circleci.com/gh/ilyagru/ilyagru.github.io) ![version](https://img.shields.io/badge/version-2.1.0-blue)
+
 [ilyagru.github.io](https://ilyagru.github.io)
 
 Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.

@@ -65,11 +65,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint": "prettier -c \"**/*.{js,jsx,json,md}\" && eslint --ext .js,.jsx --ignore-pattern public .",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest --watch",
+    "test": "jest",
     "deploy": "npm run build && gh-pages -d public -b master"
   }
 }

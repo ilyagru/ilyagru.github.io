@@ -1,6 +1,6 @@
 # Personal website & blog
 
-![Status Check](https://github.com/ilyagru/ilyagru.github.io/workflows/Status%20Check/badge.svg) ![version](https://img.shields.io/badge/version-2.1.0-blue)
+![Status Check](https://github.com/ilyagru/ilyagru.github.io/workflows/Status%20Check/badge.svg) ![Gatsby Publish](https://github.com/ilyagru/ilyagru.github.io/workflows/Gatsby%20Publish/badge.svg) ![version](https://img.shields.io/badge/version-2.1.0-blue)
 
 [ilyagru.github.io](https://ilyagru.github.io)
 

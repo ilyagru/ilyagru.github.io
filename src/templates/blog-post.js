@@ -15,12 +15,19 @@ class BlogPostTemplate extends React.Component {
     const twitterShareUrl =
       'https://twitter.com/intent/tweet?text=' +
       encodeURIComponent(`${post.frontmatter.title} by ${author} ${this.props.location.href}`);
-    const reportMistakeUrl = 'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
-    const metaImage = `${this.props.data.site.siteMetadata.siteUrl}${post.frontmatter.featuredImage.childImageSharp.fixed.src}`;
+    const reportMistakeUrl =
+      'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
+    const metaImage = post.frontmatter.featuredImage
+      ? `${this.props.data.site.siteMetadata.siteUrl}${post.frontmatter.featuredImage.childImageSharp.fixed.src}`
+      : '';
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.frontmatter.summary || post.excerpt} image={metaImage} />
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.summary || post.excerpt}
+          image={metaImage}
+        />
         <article>
           <h1>{post.frontmatter.title}</h1>
           <DateComponent>{post.frontmatter.date}</DateComponent>
@@ -49,14 +56,14 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={`/${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={`/${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -69,7 +76,7 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate;
 
-export const pageQuery = graphql`
+export const blogPostQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {

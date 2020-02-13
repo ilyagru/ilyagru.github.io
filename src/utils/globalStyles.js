@@ -10,6 +10,10 @@ export default {
   body: {
     overflowX: 'hidden',
   },
+  h4: {
+    letterSpacing: 'inherit',
+    textTransform: 'inherit',
+  },
   'a.gatsby-resp-image-link': {
     boxShadow: `none`,
   },

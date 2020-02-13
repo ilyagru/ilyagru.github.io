@@ -55,6 +55,7 @@ The app was translated into 4 languages, there were few translations. This is no
 
 There are many articles about publishing applications, so I will not describe the process. My application was approved from the first time within a day. I also learned that the app preview can be recorded using the QuickTime player and edited in iMovie, there is a special function for this. Everything is very intuitive and understandable, even for people with no experience in video editing.
 
+<!-- TODO: Replace with React component -->
 <p style="border-radius: 3px; overflow: hidden; line-height: 0;">
   <iframe
     src="https://www.youtube.com/embed/77reFlMS6d8?rel=0"

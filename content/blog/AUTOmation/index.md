@@ -60,6 +60,7 @@ During the hackathon I built [a simple app](https://github.com/ilyagru/AUTOmatio
 
 The app has an integration with Siri to be able to use it with the Voice Assistant or Siri Shortcuts and automate your day to day tasks. There is even no any user interface needed. As a demo, it supports only one scenario — preparing a car to go to work with saying just a few words. After saying "_Siri, I'm going to work_" the commands (AutoAPIs used) are sent to the car and it will be prepared: the engine starts, the lights are active, the doors are unlocked, the agenda on the car's screen, the navi destination is set, the in-car temperature is set, and so on. In return Siri says that _your car is ready_.
 
+<!-- TODO: Replace with React component -->
 <p style="border-radius: 3px; overflow: hidden; line-height: 0;">
   <iframe
     src="https://www.youtube.com/embed/jKCEpYybPuM?rel=0"

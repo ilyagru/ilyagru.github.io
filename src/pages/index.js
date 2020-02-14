@@ -16,7 +16,17 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
-          keywords={[`blog`, `frontend`, `javascript`, `react`, `swift`, `ios`, `life`, `development`, `design`]}
+          keywords={[
+            `blog`,
+            `frontend`,
+            `javascript`,
+            `react`,
+            `swift`,
+            `ios`,
+            `life`,
+            `development`,
+            `design`,
+          ]}
         />
         <Bio />
         {posts.map(({ node }) => {
@@ -25,7 +35,7 @@ class BlogIndex extends React.Component {
           return (
             <article key={node.fields.slug}>
               <h3 style={{ marginBottom: rhythm(1 / 4) }}>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link style={{ boxShadow: `none` }} to={`/${node.fields.slug}`}>
                   {title}
                 </Link>
               </h3>
@@ -41,7 +51,7 @@ class BlogIndex extends React.Component {
 
 export default BlogIndex;
 
-export const pageQuery = graphql`
+export const indexQuery = graphql`
   query {
     site {
       siteMetadata {

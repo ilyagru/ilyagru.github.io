@@ -10,7 +10,7 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 
 1.  **Start developing**
 
-    ```sh
+    ```bash
     npm start
     ```
 
@@ -22,13 +22,13 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 
 1.  **Production**
 
-    ```sh
+    ```bash
     npm run build
     ```
 
 1.  **Test locally**
 
-    ```sh
+    ```bash
     npm run serve
     ```
 
@@ -36,13 +36,13 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 
 1.  **Run tests**
 
-    ```sh
+    ```bash
     npm test
     ```
 
 1.  **Deploy**
 
-    ```sh
+    ```bash
     npm run deploy
     ```
 

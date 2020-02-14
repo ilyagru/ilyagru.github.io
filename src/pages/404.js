@@ -32,7 +32,7 @@ class NotFoundPage extends React.Component {
 
 export default NotFoundPage;
 
-export const pageQuery = graphql`
+export const notFoundQuery = graphql`
   query {
     notFoundImage: file(absolutePath: { regex: "/not-found.png/" }) {
       childImageSharp {

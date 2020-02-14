@@ -1,6 +1,27 @@
 {
+  "editor.minimap.maxColumn": 80,
+  "editor.minimap.renderCharacters": false,
+  "editor.autoIndent": "full",
+  "[css]": {
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "tslint.enable": false,
+  "eslintIntegration": true,
   "eslint.enable": true,
-  "eslint.format.enable": true,
   "editor.formatOnSave": true,
-  "eslint.validate": ["html", "javascript", "typescript", "javascriptreact", "typescriptreact"]
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

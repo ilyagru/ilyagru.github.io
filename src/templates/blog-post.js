@@ -15,8 +15,7 @@ class BlogPostTemplate extends React.Component {
     const twitterShareUrl =
       'https://twitter.com/intent/tweet?text=' +
       encodeURIComponent(`${post.frontmatter.title} by ${author} ${this.props.location.href}`);
-    const reportMistakeUrl =
-      'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
+    const reportMistakeUrl = 'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
     const metaImage = post.frontmatter.featuredImage
       ? `${this.props.data.site.siteMetadata.siteUrl}${post.frontmatter.featuredImage.childImageSharp.fixed.src}`
       : '';

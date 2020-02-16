@@ -1,5 +1,6 @@
-export default {
+export const lightTheme = {
   // Colors
+  mainBackgroundColor: '#fff',
   accentColor: '#DAA520',
   grayColor: 'rgba(0,0,0,0.59)',
   blackColor: '#000',
@@ -15,6 +16,7 @@ export default {
   // Sizes
   radius: '3px',
 
+  // Animations
   transition: 'all 0.3s ease',
 
   // Fonts

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const VideContainer = styled.div`
-  border-radius: 3px;
+export const VideoContainer = styled.div`
+  border-radius: ${({ theme }) => theme.radius};
   overflow: hidden;
   line-height: 0;
   text-aling: center;

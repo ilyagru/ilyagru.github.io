@@ -2,26 +2,25 @@ import React from 'react';
 import PT from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import constants from '../utils/constants';
 import { enableScroll, disableScroll } from '../utils/window';
 
 const BaseButton = styled.button`
-  border: 1px solid ${constants.accentColor};
+  border: 1px solid ${({ theme }) => theme.accentColor};
   background-color: transparent;
   outline: 0;
-  font-family: ${constants.merriweatherFont};
-  transition: ${constants.transition};
+  font-family: ${({ theme }) => theme.merriweatherFont};
+  transition: ${({ theme }) => theme.transition};
   position: relative;
   z-index: 20;
-  color: ${constants.blackColor};
+  color: ${({ theme }) => theme.blackColor};
   font-weight: 800;
 
   ${({ isMenuOpen }) =>
     isMenuOpen
       ? css`
           transform: translate(15px) rotate(-90deg);
-          background-color: ${constants.accentColor};
-          color: ${constants.whiteColor};
+          background-color: ${({ theme }) => theme.accentColor};
+          color: ${({ theme }) => theme.whiteColor};
         `
       : css`
           transform: rotate(0deg);

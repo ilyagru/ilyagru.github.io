@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css, ThemeContext } from 'styled-components';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import posed, { PoseGroup } from 'react-pose';
 
-import constants from '../utils/constants';
 import { isBrowserChrome, getBodyHeight, getVisibleBodyHeight } from '../utils/window';
 
 const AnimatedNavContainer = posed.div({
@@ -38,8 +37,8 @@ const NavContainer = styled(AnimatedNavContainer)`
   right: 0;
   top: 0;
   z-index: 10;
-  background-color: ${constants.backgroundColor};
-  border-radius: ${constants.radius} 0 0 ${constants.radius};
+  background-color: ${({ theme }) => theme.backgroundColor};
+  border-radius: ${({ theme }) => `${theme.radius} 0 0 ${theme.radius}`};
   box-shadow: -2px 0px 5px -1px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -55,11 +54,11 @@ const NavContainer = styled(AnimatedNavContainer)`
           // Add the Blur effect for Safari
           ${isBrowserChrome()
             ? css`
-                background-color: ${constants.backgroundColor};
+                background-color: ${({ theme }) => theme.backgroundColor};
               `
             : css`
                 backdrop-filter: saturate(180%) blur(20px);
-                background-color: ${constants.backgroundColorTransparent};
+                background-color: ${({ theme }) => theme.backgroundColorTransparent};
               `}
         `
       : css``}
@@ -76,12 +75,14 @@ const NavList = styled.ol`
 
 const NavLink = styled.li``;
 
-const activeLinkStyle = {
-  boxShadow: 'none',
-  color: constants.blackColor,
-};
-
 function Navbar({ isMenuOpen }) {
+  const theme = useContext(ThemeContext);
+
+  const activeLinkStyle = {
+    boxShadow: 'none',
+    color: theme.blackColor,
+  };
+
   return (
     <StaticQuery
       query={navbarQuery}

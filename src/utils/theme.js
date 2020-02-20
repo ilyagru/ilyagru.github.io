@@ -3,6 +3,7 @@ const baseTheme = {
   radius: '3px',
   // Animations
   transition: 'all 0.3s ease',
+  bodyTransition: 'background 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
   // Fonts
   montserratFont: 'Montserrat, sans-serif',
   merriweatherFont: 'Merriweather, sans-serif',

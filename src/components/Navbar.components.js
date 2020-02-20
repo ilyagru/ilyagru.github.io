@@ -41,6 +41,7 @@ export const NavContainer = styled(AnimatedNavContainer)`
   justify-content: center;
   min-width: 300px;
   overflow: hidden;
+  transition: ${({ theme }) => theme.bodyTransition};
 
   ${({ isMenuOpen }) =>
     isMenuOpen

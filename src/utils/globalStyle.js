@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     color: ${({ theme }) => theme.textColor};
     background-color: ${({ theme }) => theme.mainBackgroundColor};
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: ${({ theme }) => theme.bodyTransition};
   }
   h4 {
     letter-spacing: inherit;

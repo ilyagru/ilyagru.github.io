@@ -1,15 +1,12 @@
 import Typography from 'typography';
-import CodePlugin from 'typography-plugin-code';
 import Wordpress2016Theme from 'typography-theme-wordpress-2016';
 
-import globalStyles from './globalStyles';
-
-Wordpress2016Theme.plugins = [new CodePlugin()];
-Wordpress2016Theme.overrideThemeStyles = () => {
-  return globalStyles;
-};
-
 delete Wordpress2016Theme.googleFonts;
+
+// baseFontSize 16px,
+// baseLineHeight 1.75,
+// scaleRatio 2.5
+// rhythm unit 1.75rem
 
 const typography = new Typography(Wordpress2016Theme);
 

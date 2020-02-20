@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import { Date } from '../components/Typography.components';
 import { rhythm } from '../utils/typography';
 
 class BlogIndex extends React.Component {
@@ -39,7 +40,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <Date>{node.frontmatter.date}</Date>
               <p dangerouslySetInnerHTML={{ __html: node.frontmatter.summary || node.excerpt }} />
             </article>
           );

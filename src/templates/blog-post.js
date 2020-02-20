@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { DateComponent, Separator } from '../components/Typography.components';
+import { Date, Separator } from '../components/Typography.components';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
         />
         <article>
           <h1>{post.frontmatter.title}</h1>
-          <DateComponent>{post.frontmatter.date}</DateComponent>
+          <Date respectTopMargin={false}>{post.frontmatter.date}</Date>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
         <br />

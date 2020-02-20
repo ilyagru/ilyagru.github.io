@@ -3,7 +3,6 @@ import PT from 'prop-types';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 
-import constants from '../utils/constants';
 import { rhythm, scale } from '../utils/typography';
 
 export const LayoutContainer = styled.div`
@@ -20,6 +19,7 @@ export const TitleLink = ({ title }) => {
         boxShadow: `none`,
         textDecoration: `none`,
         color: `inherit`,
+        transition: `none`,
       }}
       to={`/`}
     >
@@ -63,8 +63,8 @@ export const Title = styled.h1`
 `;
 
 export const TitleSecondary = styled.h3`
-  font-family: ${constants.montserratFont};
+  font-family: ${({ theme }) => theme.montserratFont};
   margin-top: 0;
   margin-bottom: 0;
-  color: ${constants.accentColor};
+  color: ${({ theme }) => theme.accentColor};
 `;

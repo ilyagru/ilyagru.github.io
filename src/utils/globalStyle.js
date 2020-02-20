@@ -2,10 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { rhythm } from './typography';
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    color: ${({ theme }) => theme.blackColor};
-    background-color: ${({ theme }) => theme.mainBackgroundColor};
-  }
   ::selection {
     background: ${({ theme }) => theme.accentBackgroundColor};
   }
@@ -14,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     overflow-x: hidden;
+    color: ${({ theme }) => theme.textColor};
+    background-color: ${({ theme }) => theme.mainBackgroundColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   h4 {
     letter-spacing: inherit;
@@ -44,10 +43,11 @@ const GlobalStyle = createGlobalStyle`
     -moz-appearance: none;
   },
   button:active {
-    border-color: ${({ theme }) => theme.blackColor};
+    border-color: ${({ theme }) => theme.textColor};
   }
   blockquote {
     color: ${({ theme }) => theme.grayColor};
+    border-left-color: ${({ theme }) => theme.grayColor};
   }
   hr: {
     border-radius: ${({ theme }) => theme.radius};
@@ -57,6 +57,10 @@ const GlobalStyle = createGlobalStyle`
     border-radius: ${({ theme }) => theme.radius};
     width: 100%;
     min-height: 450px;
+  }
+  img {
+    width: 100%;
+    border-radius: ${({ theme }) => theme.radius};
   }
   pre {
     background: hsla(0,0%,0%,0.04);

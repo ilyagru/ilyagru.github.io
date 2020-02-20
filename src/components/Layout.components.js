@@ -19,6 +19,7 @@ export const TitleLink = ({ title }) => {
         boxShadow: `none`,
         textDecoration: `none`,
         color: `inherit`,
+        transition: `none`,
       }}
       to={`/`}
     >

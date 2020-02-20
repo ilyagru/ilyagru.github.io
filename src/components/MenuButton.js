@@ -12,7 +12,7 @@ const BaseButton = styled.button`
   transition: ${({ theme }) => theme.transition};
   position: relative;
   z-index: 20;
-  color: ${({ theme }) => theme.blackColor};
+  color: ${({ theme }) => theme.textColor};
   font-weight: 800;
 
   ${({ isMenuOpen }) =>
@@ -20,7 +20,7 @@ const BaseButton = styled.button`
       ? css`
           transform: translate(15px) rotate(-90deg);
           background-color: ${({ theme }) => theme.accentColor};
-          color: ${({ theme }) => theme.whiteColor};
+          color: ${({ theme }) => theme.textColorReversed};
         `
       : css`
           transform: rotate(0deg);

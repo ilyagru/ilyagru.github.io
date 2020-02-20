@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import { lightTheme, darkTheme } from '../utils/theme';
 
-/**
- * A hook to get and update the current theme for dark mode
- * @returns [theme, toggleTheme] - [current theme, function to toggle theme]
- */
 const useTheme = () => {
   const storedTheme = typeof window !== 'undefined' && window.localStorage.getItem('theme');
   const matchesDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;

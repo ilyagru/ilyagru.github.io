@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
   }
   pre {
     background: hsla(0,0%,0%,0.04);
-    background-color: ${({ theme }) => theme.backgroundColor};
+    background-color: ${({ theme }) => theme.backgroundColorTransparent};
     margin: 0;
     margin-bottom: ${rhythm(1)};
     border-radius: ${({ theme }) => theme.radius};
@@ -72,31 +72,47 @@ const GlobalStyle = createGlobalStyle`
     word-wrap: normal;
     padding: ${rhythm(1)};
     line-height: 1.42;
+    box-shadow: ${({ theme }) => theme.cardBoxShadow};
+
+  }
+  code {
+    font-family: ${({ theme }) => theme.oxygenMonoFont};
   }
   pre code {
-     background: none;
      line-height: 1.42;
   }
   code .keyword {
-    color: ${({ theme }) => theme.accentColor};
+    color: ${({ theme }) => theme.keywordColor};
   }
   code .string {
-    color: ${({ theme }) => theme.greenColor};
+    color: ${({ theme }) => theme.stringColor};
   }
   code .comment {
-    color: ${({ theme }) => theme.grayColor};
+    color: ${({ theme }) => theme.commentColor};
   }
   code .number {
-    color: ${({ theme }) => theme.violetColor};
+    color: ${({ theme }) => theme.numberColor};
   }
   code .boolean {
-    color: ${({ theme }) => theme.violetColor};
+    color: ${({ theme }) => theme.booleanColor};
   }
   code .function {
-    color: ${({ theme }) => theme.redColor};
+    color: ${({ theme }) => theme.functionColor};
   }
   code .builtin {
-    color: ${({ theme }) => theme.blueColor};
+    color: ${({ theme }) => theme.builtinColor};
+  }
+  code .punctuation {
+    color: ${({ theme }) => theme.punctuationColor};
+  }
+  code .class-name {
+    color: ${({ theme }) => theme.classNameColor};
+  }
+  code .operator {
+    color: ${({ theme }) => theme.operatorColor};
+  }
+  code .attr-value {
+    color: ${({ theme }) => theme.stringColor};
   }
 `;
 

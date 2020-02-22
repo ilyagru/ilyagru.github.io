@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { lightTheme, darkTheme } from '../utils/theme';
+import { isWindowDefined } from '../utils/window';
 
 const useTheme = () => {
-  const isWindowDefined = typeof window !== 'undefined';
-  const storedTheme = isWindowDefined && window.localStorage.getItem('theme');
+  const isWindow = isWindowDefined();
+  const storedTheme = isWindow && window.localStorage.getItem('theme');
   const matchesDark =
-    isWindowDefined && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    isWindow && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   const initialTheme = storedTheme ? storedTheme : matchesDark ? 'dark' : 'light';
 
@@ -15,14 +16,14 @@ const useTheme = () => {
   const toggleTheme = () => setTheme(isLight ? 'dark' : 'light');
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (isWindow) {
       window.localStorage.setItem('theme', theme);
       // Remove dark critical styles
       if (isLight) {
         document.body.classList.remove('dark');
       }
     }
-  }, [isLight, theme]);
+  }, [isWindow, isLight, theme]);
 
   return {
     isLight,

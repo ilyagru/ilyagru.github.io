@@ -161,7 +161,7 @@ Now we implemented everything that was necessary. Let's enable it for our app!
 
 First wrap the app into `ContextProvider`. It should be at one level higher than the navigation, so we could see our toasts covering the app's navigation bar.
 
-```tsx
+```tsx{5,8}
 // ./App.tsx
 
 const App = () => {
@@ -176,14 +176,13 @@ const App = () => {
 
 Add the Gate for the toasts. It could be at the same level as our navigation – it is enough to display toasts on the navigation bar. Provide the name for the Gate, in this case it would be `toaster`.
 
-```tsx
+```tsx{7}
 // ./App.tsx
 
 const App = () => {
   return (
     <PortalProvider>
       <StatusBar barStyle="dark-content" />
-      {/* Our toaster gate */}
       <PortalConsumer gateName="toaster" />
       <RootStackNavigationContainer />
     </PortalProvider>
@@ -197,7 +196,7 @@ And finally we can use either `useToaster`, or even `contextType` (for class com
 
 #### Functional component
 
-```tsx
+```tsx{4-7,11}
 // ./src/navigation/screens.tsx
 
 const HomeScreen = () => {
@@ -217,7 +216,7 @@ const HomeScreen = () => {
 
 #### Class component
 
-```tsx
+```tsx{4-6,11}
 // ./src/navigation/screens.tsx
 
 export class DetailsScreen extends Component<{}, {}> {
@@ -242,7 +241,7 @@ export class DetailsScreen extends Component<{}, {}> {
 
 One more think left is to automatically clean up our toasts. It's necessary to clean our gates before sending new toasts since it could cause rendering issues. So don't forget to call `teleport` with `null` in the `onEndAnimation` callback.
 
-```tsx
+```tsx{10-11}
 // ./src/components/toast.tsx
 
 private endAnimation = () => {

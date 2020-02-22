@@ -62,24 +62,42 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     border-radius: ${({ theme }) => theme.radius};
   }
-  pre {
-    background: hsla(0,0%,0%,0.04);
-    background-color: ${({ theme }) => theme.backgroundColorTransparent};
-    margin: 0;
-    margin-bottom: ${rhythm(1)};
+  .gatsby-highlight {
     border-radius: ${({ theme }) => theme.radius};
-    overflow: auto;
-    word-wrap: normal;
     padding: ${rhythm(1)};
-    line-height: 1.42;
+    overflow: auto;
+    margin-bottom: ${rhythm(1)};
+    background-color: ${({ theme }) => theme.backgroundColorTransparent};
     box-shadow: ${({ theme }) => theme.cardBoxShadow};
-
+  }
+  pre {
+    margin: 0;
+    border-radius: ${({ theme }) => theme.radius};
+    word-wrap: normal;
+    line-height: 1.42;
+    float: left;
+    min-width: 100%;
+    padding-right: ${rhythm(1)};
   }
   code {
     font-family: ${({ theme }) => theme.oxygenMonoFont};
   }
+  p code {
+    background-color: ${({ theme }) => theme.backgroundColorTransparent};
+    padding: 0 ${rhythm(2.9 / 16)} 0 ${rhythm(2.9 / 16)};
+    border-radius: ${({ theme }) => theme.radius};
+  }
   pre code {
-     line-height: 1.42;
+    line-height: 1.42;
+  }
+  .gatsby-highlight-code-line {
+    display: block;
+    background-color: ${({ theme }) => theme.accentBackgroundColor};
+    padding-left: calc(${rhythm(1)} - ${rhythm(3 / 16)});
+    padding-right: ${rhythm(1)};
+    margin-left: ${rhythm(-1)};
+    margin-right: ${rhythm(-2)};
+    border-left: ${rhythm(3 / 16)} solid ${({ theme }) => theme.accentColor};
   }
   code .keyword {
     color: ${({ theme }) => theme.keywordColor};

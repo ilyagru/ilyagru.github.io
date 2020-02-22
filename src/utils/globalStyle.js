@@ -62,41 +62,75 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     border-radius: ${({ theme }) => theme.radius};
   }
-  pre {
-    background: hsla(0,0%,0%,0.04);
-    background-color: ${({ theme }) => theme.backgroundColor};
-    margin: 0;
-    margin-bottom: ${rhythm(1)};
+  .gatsby-highlight {
     border-radius: ${({ theme }) => theme.radius};
-    overflow: auto;
-    word-wrap: normal;
     padding: ${rhythm(1)};
+    overflow: auto;
+    margin-bottom: ${rhythm(1)};
+    background-color: ${({ theme }) => theme.backgroundColorTransparent};
+    box-shadow: ${({ theme }) => theme.cardBoxShadow};
+  }
+  pre {
+    margin: 0;
+    border-radius: ${({ theme }) => theme.radius};
+    word-wrap: normal;
     line-height: 1.42;
+    float: left;
+    min-width: 100%;
+    padding-right: ${rhythm(1)};
+  }
+  code {
+    font-family: ${({ theme }) => theme.oxygenMonoFont};
+  }
+  p code {
+    background-color: ${({ theme }) => theme.backgroundColorTransparent};
+    padding: 0 ${rhythm(2.9 / 16)} 0 ${rhythm(2.9 / 16)};
+    border-radius: ${({ theme }) => theme.radius};
   }
   pre code {
-     background: none;
-     line-height: 1.42;
+    line-height: 1.42;
+  }
+  .gatsby-highlight-code-line {
+    display: block;
+    background-color: ${({ theme }) => theme.accentBackgroundColor};
+    padding-left: calc(${rhythm(1)} - ${rhythm(3 / 16)});
+    padding-right: ${rhythm(1)};
+    margin-left: ${rhythm(-1)};
+    margin-right: ${rhythm(-2)};
+    border-left: ${rhythm(3 / 16)} solid ${({ theme }) => theme.accentColor};
   }
   code .keyword {
-    color: ${({ theme }) => theme.accentColor};
+    color: ${({ theme }) => theme.keywordColor};
   }
   code .string {
-    color: ${({ theme }) => theme.greenColor};
+    color: ${({ theme }) => theme.stringColor};
   }
   code .comment {
-    color: ${({ theme }) => theme.grayColor};
+    color: ${({ theme }) => theme.commentColor};
   }
   code .number {
-    color: ${({ theme }) => theme.violetColor};
+    color: ${({ theme }) => theme.numberColor};
   }
   code .boolean {
-    color: ${({ theme }) => theme.violetColor};
+    color: ${({ theme }) => theme.booleanColor};
   }
   code .function {
-    color: ${({ theme }) => theme.redColor};
+    color: ${({ theme }) => theme.functionColor};
   }
   code .builtin {
-    color: ${({ theme }) => theme.blueColor};
+    color: ${({ theme }) => theme.builtinColor};
+  }
+  code .punctuation {
+    color: ${({ theme }) => theme.punctuationColor};
+  }
+  code .class-name {
+    color: ${({ theme }) => theme.classNameColor};
+  }
+  code .operator {
+    color: ${({ theme }) => theme.operatorColor};
+  }
+  code .attr-value {
+    color: ${({ theme }) => theme.stringColor};
   }
 `;
 

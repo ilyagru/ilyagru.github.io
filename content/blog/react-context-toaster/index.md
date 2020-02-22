@@ -67,7 +67,7 @@ export const PortalContext = createContext<IContextProps>({
 
 Next let's implement the business logic, for these purposes we create Portal Provider. With the the help of if, we can wrap our entire app and the logic will be available throughout the app.
 
-```typescript
+```tsx
 // ./src/toaster/portalProvider.tsx
 
 interface IProviderProps {
@@ -120,7 +120,7 @@ And finally the `showToast` function which is just a convenient method for us. I
 
 Then let's move to the Context Consumer. In fact, the Consumer is our Gate. Nothing special here, just a render prop that displays the sent component as children.
 
-```typescript
+```tsx
 // ./src/toaster/portalConsumer.tsx
 
 interface IPortalConsumerProps {
@@ -161,7 +161,7 @@ Now we implemented everything that was necessary. Let's enable it for our app!
 
 First wrap the app into `ContextProvider`. It should be at one level higher than the navigation, so we could see our toasts covering the app's navigation bar.
 
-```typescript
+```tsx{5,8}
 // ./App.tsx
 
 const App = () => {
@@ -176,14 +176,13 @@ const App = () => {
 
 Add the Gate for the toasts. It could be at the same level as our navigation – it is enough to display toasts on the navigation bar. Provide the name for the Gate, in this case it would be `toaster`.
 
-```typescript
+```tsx{7}
 // ./App.tsx
 
 const App = () => {
   return (
     <PortalProvider>
       <StatusBar barStyle="dark-content" />
-      // Our toaster gate
       <PortalConsumer gateName="toaster" />
       <RootStackNavigationContainer />
     </PortalProvider>
@@ -197,7 +196,7 @@ And finally we can use either `useToaster`, or even `contextType` (for class com
 
 #### Functional component
 
-```typescript
+```tsx{4-7,11}
 // ./src/navigation/screens.tsx
 
 const HomeScreen = () => {
@@ -209,7 +208,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.screen}>
       <Button onPress={() => showToast('Message', ToastType.Info)}>Trigger toast</Button>
-      // Screen body ...
+      {/* Screen body ... */}
     </View>
   );
 };
@@ -217,7 +216,7 @@ const HomeScreen = () => {
 
 #### Class component
 
-```typescript
+```tsx{4-6,11}
 // ./src/navigation/screens.tsx
 
 export class DetailsScreen extends Component<{}, {}> {
@@ -231,7 +230,7 @@ export class DetailsScreen extends Component<{}, {}> {
         <Button onPress={() => this.context.showToast('Details message', ToastType.Info)}>
           Trigger toast
         </Button>
-        // Screen body ...
+        {/* Screen body ... */}
       </View>
     );
   }
@@ -242,7 +241,7 @@ export class DetailsScreen extends Component<{}, {}> {
 
 One more think left is to automatically clean up our toasts. It's necessary to clean our gates before sending new toasts since it could cause rendering issues. So don't forget to call `teleport` with `null` in the `onEndAnimation` callback.
 
-```typescript
+```tsx{10-11}
 // ./src/components/toast.tsx
 
 private endAnimation = () => {

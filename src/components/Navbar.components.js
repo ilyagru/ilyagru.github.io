@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import posed from 'react-pose';
 
-import { isBrowserChrome, getBodyHeight, getVisibleBodyHeight } from '../utils/window';
+import { getBodyHeight, getVisibleBodyHeight } from '../utils/window';
 
 const navContainerHeight = () => {
   const visibleBodyHeight = getVisibleBodyHeight();
@@ -34,9 +34,9 @@ export const NavContainer = styled(AnimatedNavContainer)`
   right: 0;
   top: 0;
   z-index: 10;
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: ${({ theme }) => theme.backgroundColorTransparent};
   border-radius: ${({ theme }) => `${theme.radius} 0 0 ${theme.radius}`};
-  box-shadow: -2px 0px 5px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.navbarCardBoxShadow};
   display: flex;
   justify-content: center;
   min-width: 300px;
@@ -48,16 +48,9 @@ export const NavContainer = styled(AnimatedNavContainer)`
       ? css`
           height: ${navContainerHeight()}px;
           touch-action: none;
-
           // Add the Blur effect for Safari
-          ${isBrowserChrome()
-            ? css`
-                background-color: ${({ theme }) => theme.backgroundColor};
-              `
-            : css`
-                backdrop-filter: saturate(180%) blur(20px);
-                background-color: ${({ theme }) => theme.backgroundColorTransparent};
-              `}
+          backdrop-filter: saturate(180%) blur(20px);
+          background-color: ${({ theme }) => theme.backgroundColorTransparent};
         `
       : css``}
 `;

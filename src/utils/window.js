@@ -31,7 +31,8 @@ export const disableScroll = () => {
     window.addEventListener('wheel', preventDefault, { passive: false });
   }
   window.onwheel = preventDefault; // modern standard
-  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.onmousewheel = preventDefault; // older browsers, IE
+  document.onmousewheel = preventDefault; // older browsers, IE
   window.ontouchmove = preventDefault; // mobile
   document.onkeydown = preventDefaultForScrollKeys;
 };
@@ -43,9 +44,10 @@ export const enableScroll = () => {
 
   if (window.removeEventListener) {
     window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.removeEventListener('wheel', preventDefault, { passive: false });
+    window.removeEventListener('wheel', preventDefault);
   }
-  window.onmousewheel = document.onmousewheel = null;
+  window.onmousewheel = null;
+  document.onmousewheel = null;
   window.onwheel = null;
   window.ontouchmove = null;
   document.onkeydown = null;

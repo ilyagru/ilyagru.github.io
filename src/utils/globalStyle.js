@@ -82,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
   code {
     font-family: ${({ theme }) => theme.oxygenMonoFont};
   }
-  p code {
+  p code, li code {
     background-color: ${({ theme }) => theme.backgroundColorTransparent};
     padding: 0 ${rhythm(2.9 / 16)} 0 ${rhythm(2.9 / 16)};
     border-radius: ${({ theme }) => theme.radius};

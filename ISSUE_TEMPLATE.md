@@ -1,6 +1,4 @@
-<!--
-  Have any questions? Ask in this Issue and I will be happy to help. :)
--->
+<!-- Have any questions? Ask in this Issue and I will be happy to help. :) -->
 
 ## Description
 

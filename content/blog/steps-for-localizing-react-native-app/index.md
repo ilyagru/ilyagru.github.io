@@ -1,6 +1,6 @@
 ---
 title: Steps for Localizing React Native App
-date: '2020-02-22T22:22:00.284Z'
+date: '2020-03-21T13:32:00.284Z'
 featuredImage: './steps-for-localizing-react-native-app-featured-image.png'
 summary: 'The localization itself seems difficult for a React Native app because a usual app consists of three projects: the main JavaScript, Xcode project for iOS, and Android files. But in reality, it is not that complex.'
 ---
@@ -161,7 +161,6 @@ For backend requests that send some plain text to the mobile app, you can implem
 
 {
   "order": {
-    // ...
     "orderedTooManyItemsError": "You ordered {{count}} items – that is too many for one order. Please verify your cart."
   }
 }

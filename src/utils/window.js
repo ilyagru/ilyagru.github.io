@@ -1,7 +1,7 @@
 export const isWindowDefined = () => typeof window !== `undefined`;
 export const isBrowserChrome = () => isWindowDefined() && window.chrome !== undefined;
 export const getBodyHeight = () => document.body.scrollHeight;
-export const getVisibleBodyHeight = () => isWindowDefined() && window.innerHeight;
+export const getVisibleBodyHeight = () => (isWindowDefined() ? window.innerHeight : 0);
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -31,8 +31,6 @@ export const disableScroll = () => {
     window.addEventListener('wheel', preventDefault, { passive: false });
   }
   window.onwheel = preventDefault; // modern standard
-  window.onmousewheel = preventDefault; // older browsers, IE
-  document.onmousewheel = preventDefault; // older browsers, IE
   window.ontouchmove = preventDefault; // mobile
   document.onkeydown = preventDefaultForScrollKeys;
 };
@@ -46,8 +44,6 @@ export const enableScroll = () => {
     window.removeEventListener('DOMMouseScroll', preventDefault, false);
     window.removeEventListener('wheel', preventDefault);
   }
-  window.onmousewheel = null;
-  document.onmousewheel = null;
   window.onwheel = null;
   window.ontouchmove = null;
   document.onkeydown = null;

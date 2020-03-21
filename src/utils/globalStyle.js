@@ -99,7 +99,7 @@ const GlobalStyle = createGlobalStyle`
     margin-right: ${rhythm(-2)};
     border-left: ${rhythm(3 / 16)} solid ${({ theme }) => theme.accentColor};
   }
-  code .keyword {
+  code .keyword, .language-xml .attr-name {
     color: ${({ theme }) => theme.keywordColor};
   }
   code .string {
@@ -114,7 +114,7 @@ const GlobalStyle = createGlobalStyle`
   code .boolean {
     color: ${({ theme }) => theme.booleanColor};
   }
-  code .function {
+  code .function, .language-xml .tag {
     color: ${({ theme }) => theme.functionColor};
   }
   code .builtin {
@@ -123,7 +123,7 @@ const GlobalStyle = createGlobalStyle`
   code .punctuation {
     color: ${({ theme }) => theme.punctuationColor};
   }
-  code .class-name {
+  code .class-name, .language-xml .prolog {
     color: ${({ theme }) => theme.classNameColor};
   }
   code .operator {

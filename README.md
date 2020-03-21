@@ -46,7 +46,7 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
     npm run deploy
     ```
 
-    For a repository named like ilyagru.github.io.
+    For a repository named like ilyagru.github.io. Deploying automatically by Github Actions on merging to develop.
 
     Note: In this case you don’t need to specify `--prefix-paths` and your website needs to be pushed to master branch.
 
@@ -83,3 +83,33 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
     You may share the content in the original form with a proper attribution (my name, a link to the original).
 
 2.  Gatsbyjs is licensed under the [MIT License](https://github.com/gatsbyjs/gatsby/blob/master/LICENSE).
+
+## TODO:
+
+### Migrate to TypeScript
+
+In general, TypeScript is not well supported yet, for example `gatsby-*.js` files are going to stay JS, codegen doesn't seem encouraging, also getting `GraphQLDocumentError: Unknown fragment "GatsbyImageSharpFluid"` for image fragments. Styled-components types could potentially by a mess. So maybe later...
+
+#### QuickStart
+
+- https://dev.to/speshov/how-to-setup-gatsbyjs-starter-with-typescript-eslint-prettier-4jh3
+- https://www.arden.nl/setting-up-a-gatsby-js-starter-with-type-script-es-lint-prettier-and-pre-commit-hooks
+- https://specific.solutions.limited/blog/gatsby-configuration-in-typescript
+
+##### TypeScript plugin
+
+- https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/
+- https://www.gatsbyjs.org/packages/gatsby-plugin-ts/
+
+##### Codegen
+
+- https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/
+- https://github.com/cometkim/gatsby-plugin-typegen
+
+### Page transitions
+
+https://www.gatsbyjs.org/docs/adding-page-transitions-with-plugin-transition-link/
+
+### Fix incorrect button color on opening the website
+
+https://curtistimson.co.uk/post/gatsbyjs/add-body-class-gatsbyjs-fouc/

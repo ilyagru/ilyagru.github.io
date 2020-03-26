@@ -57,10 +57,10 @@ There is a cool app [f.lux](https://justgetflux.com) that makes the screen adapt
 
 ### Consider Computer Glasses
 
-For the greatest comfort at your screen, it is recommended to wear computer glasses, you might need to ask your eye doctor to modify your eyeglasses prescription to have that blue screen protection or get non-prescription computer glasses. Anyway, consult a doctor for better results.
+For the greatest comfort at your screen, it is recommended to wear computer glasses, you might need to ask your eye doctor to modify your eyeglasses prescription to have that blue screen protection or get non-prescription computer glasses. Anyway, consult a doctor before buying.
 
 ## You Can Do Even More
 
-Don't forget to exercise. You can use an app like [Streaks Workout](https://streaksworkout.com) if you need some motivation. There is a lot of apps for meditation and yoga too. Just try to do it regularly to stay a in a good shape while all gyms are closed.
+Don't forget to exercise. You can use an app like [Streaks Workout](https://streaksworkout.com) if you need some motivation. There is a lot of apps for meditation and yoga too. Just try to do it regularly to stay a in a good shape while all gyms are closed. I even started to put my laptop on a higher position and stand for some time during my workday. One more idea is to walk or do planks during stand-ups or meetings.
 
 Stay safe!

@@ -2,14 +2,14 @@
 title: Take Care of Your Eyes When Staying at Home
 date: '2020-03-25T22:06:00.284Z'
 featuredImage: './take-care-of-your-eyes-when-staying-at-home-featured-image.png'
-summary: 'Many of us, if not everybody, are sitting in front of a laptop screen, iPhone or TV. That really impacts our vision and could cause eye fatigue, in chronic cases even syndrome of computer vision. So take a piece of advice for taking care of your eyes.'
+summary: 'Many of us, if not everybody, are sitting in front of a laptop screen, iPhone or TV much more now. That really impacts our vision and could cause eye fatigue, in chronic cases even syndrome of computer vision. So take a piece of advice for taking care of your eyes.'
 ---
 
 ## Self-isolation
 
 ![Take care of your eyes](./take-care-of-your-eyes-when-staying-at-home-featured-image.png)
 
-Yeah, the coronavirus is making all of us stay at home for long time. Many of us, if not everybody, are sitting in front of a laptop screen, iPhone or TV. That really impacts our vision and could cause eye fatigue, in chronic cases even syndrome of computer vision. It is a common issue for developers, designers or just remote workers. So take a piece of advice for improving your eye health.
+Yeah, the coronavirus is making all of us stay at home for long time. Many of us, if not everybody, are sitting in front of a laptop screen, iPhone or TV now what is proved by the overall demand for online services which [has noticeably climbed](https://angel.co/today/stories/big-tech-could-emerge-from-coronavirus-crisis-stronger-than-ever-15579). Many of them like Slack [break user records](https://www.theverge.com/2020/3/26/21195092/slack-new-user-records-coronavirus-pandemic-remote-working-growth-concurrent-users). This bump simply means that people are starting to spend more time online. That really impacts our vision and could cause eye fatigue, in chronic cases even syndrome of computer vision. It is a common issue for developers, designers or just remote workers. So take a piece of advice for improving your eye health.
 
 ## Ways of Eye Protection
 

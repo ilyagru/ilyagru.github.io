@@ -58,6 +58,14 @@ function Bio({ slug }) {
                 rel="nofollow noopener noreferrer"
               >
                 GitHub
+              </a>{' '}
+              or{' '}
+              <a
+                href={`https://twitter.com/${social.twitter}`}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                Twitter
               </a>
               .
             </p>
@@ -90,6 +98,7 @@ const bioQuery = graphql`
         author
         social {
           github
+          twitter
         }
       }
     }

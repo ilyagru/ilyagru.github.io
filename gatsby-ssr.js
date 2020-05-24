@@ -1,9 +1,11 @@
 import { createElement } from 'react';
-import { darkTheme } from './src/utils/theme';
+import criticalStyle from './src/utils/criticalStyle';
 
 const applyDarkClass = `(function(){try{if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark');}}catch(e){}})();`;
-const applyCriticalDarkStyles = `body.dark{background-color:${darkTheme.mainBackgroundColor};color:${darkTheme.textColor};}body.dark button{color:${darkTheme.textColor};}`;
 
+/*
+ * This handles the flash on opening when dark mode should be enabled by default.
+ */
 export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
   const darkClassScript = createElement('script', {
     dangerouslySetInnerHTML: {
@@ -13,7 +15,7 @@ export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
   });
   const criticalStyles = createElement('style', {
     dangerouslySetInnerHTML: {
-      __html: applyCriticalDarkStyles,
+      __html: criticalStyle,
     },
     key: 'criticalStyles',
   });

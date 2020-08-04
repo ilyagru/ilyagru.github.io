@@ -98,7 +98,7 @@ export class PortalProvider extends Component<IProviderProps, IProviderState> {
   }
 
   private teleport = (gateName: GateName, element: ReactNode) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       gates: { ...prevState.gates, [gateName]: element },
     }));
   };
@@ -130,7 +130,7 @@ interface IPortalConsumerProps {
 
 export const PortalConsumer = ({ gateName, children }: IPortalConsumerProps) => (
   <PortalContext.Consumer>
-    {value => (
+    {(value) => (
       <>
         {value.gates[gateName]}
         {children && children(value.teleport)}

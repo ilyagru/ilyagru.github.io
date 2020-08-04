@@ -65,20 +65,16 @@ export function buildSectionListData<T extends { [key: string]: Array<{ start: M
 ): SectionListWeek<T> {
   const week = {
     title: startDate,
-    data: range(DAYS_IN_WEEK).map(day => {
+    data: range(DAYS_IN_WEEK).map((day) => {
       // Increment startDate by one day with every new day
-      const dayDate = startDate
-        .clone()
-        .add(day, 'day')
-        .set('hour', 0)
-        .set('minute', 0);
+      const dayDate = startDate.clone().add(day, 'day').set('hour', 0).set('minute', 0);
 
       const keys = Object.keys(items); // e.g. ['events']
       const dayItems = Object.assign({}, ...keys);
 
       // Assign each array of items to its corresponding day
-      keys.forEach(key => {
-        dayItems[key] = items[key].filter(item => moment(item.start).date() === dayDate.date());
+      keys.forEach((key) => {
+        dayItems[key] = items[key].filter((item) => moment(item.start).date() === dayDate.date());
       });
 
       return {

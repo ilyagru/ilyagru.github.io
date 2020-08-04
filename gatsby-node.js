@@ -24,7 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `
-  ).then(result => {
+  ).then((result) => {
     if (result.errors) {
       throw result.errors;
     }
@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
     const items = result.data.allMarkdownRemark.edges;
 
     // Create blog posts pages.
-    const posts = items.filter(item => item.node.fields.source === 'blog');
+    const posts = items.filter((item) => item.node.fields.source === 'blog');
 
     posts.forEach((post, index) => {
       const lastIndex = posts.length - 1;
@@ -53,7 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
     });
 
     // Create information pages
-    const informations = items.filter(item => item.node.fields.source === 'information');
+    const informations = items.filter((item) => item.node.fields.source === 'information');
 
     informations.forEach((information, index) => {
       createPage({

@@ -18,7 +18,7 @@ const Navbar = ({ isMenuOpen, toggleTheme, isLight }) => {
   return (
     <StaticQuery
       query={navbarQuery}
-      render={data => {
+      render={(data) => {
         const { siteUrl } = data.site.siteMetadata;
 
         return (

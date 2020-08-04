@@ -71,7 +71,7 @@ Imagine we have a library that also needs localizing, e.g. `react-native-calenda
 import moment from 'moment';
 import { LocaleConfig as RNCalendarsLocaleConfig } from 'react-native-calendars';
 
-Object.keys(locales).forEach(locale => {
+Object.keys(locales).forEach((locale) => {
   RNCalendarsLocaleConfig.locales[locale] = {
     monthNames: moment.localeData(locale).months(),
     monthNamesShort: moment.localeData(locale).monthsShort(),
@@ -86,7 +86,7 @@ And then we need add an event listener for language change to be able to set the
 ```typescript
 // localization/index.ts
 
-i18n.on('languageChanged', currentLanguage => {
+i18n.on('languageChanged', (currentLanguage) => {
   const locale = Object.keys(locales).includes(currentLanguage) ? currentLanguage : fallbacklanguage;
 
   moment.locale(locale);

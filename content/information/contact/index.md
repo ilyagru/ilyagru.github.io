@@ -9,4 +9,4 @@ summary: Want to work with me, discuss latest technologies or just say hi? You c
 1. [Twitter](https://twitter.com/ilyagruzhevski) – Social
 
 Want to work with me, discuss latest technologies or just say hi?
-You can contact me using Telegram _**@gruzhevski**_ or via email _**ilya.gruzhevski[at]gmail.com**_.
+You can contact me via email _**ilya.gru.tech[at]gmail.com**_.

@@ -56,13 +56,13 @@ const SwitchText = styled.span`
   transition: ${({ theme }) => theme.transition};
 `;
 
-const Switch = ({ onToggle, isOn }) => {
+const Switch = ({ onLabel, offLabel, onToggle, isOn }) => {
   return (
     <>
       <SwitchInput id={`switch`} checked={isOn} onChange={onToggle} type="checkbox" />
       <SwitchTrack checked={isOn} htmlFor={`switch`}>
         <SwitchCircle checked={isOn}></SwitchCircle>
-        <SwitchText checked={isOn}>{isOn ? 'dark' : 'light'}</SwitchText>
+        <SwitchText checked={isOn}>{isOn ? onLabel : offLabel}</SwitchText>
       </SwitchTrack>
     </>
   );

@@ -52,7 +52,7 @@ const Navbar = ({ isMenuOpen, toggleTheme, isLight }) => {
                         RSS feed
                       </a>
                     </NavLink>
-                    <Switch onToggle={toggleTheme} isOn={!isLight} />
+                    <Switch onToggle={toggleTheme} isOn={!isLight} onLabel="dark" offLabel="light" />
                   </NavList>
                 </Nav>
               </NavContainer>

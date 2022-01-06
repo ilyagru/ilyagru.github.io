@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Image from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -15,8 +15,8 @@ class NotFoundPage extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="404 - Not Found" />
         <h1>Oh là là! Not Found.</h1>
-        <Image
-          fluid={data.notFoundImage.childImageSharp.fluid}
+        <GatsbyImage
+          image={data.notFoundImage.childImageSharp.gatsbyImageData}
           alt="Page not found"
           style={{
             marginBottom: rhythm(1),
@@ -36,9 +36,7 @@ export const notFoundQuery = graphql`
   query NotFoundQuery {
     notFoundImage: file(absolutePath: { regex: "/not-found.png/" }) {
       childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(quality: 100, layout: FULL_WIDTH)
       }
     }
     site {

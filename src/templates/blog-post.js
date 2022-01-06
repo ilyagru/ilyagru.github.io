@@ -5,6 +5,7 @@ import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { Date, Separator } from '../components/Typography.components';
+import { getSrc } from 'gatsby-plugin-image';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,8 +17,9 @@ class BlogPostTemplate extends React.Component {
       'https://twitter.com/intent/tweet?text=' +
       encodeURIComponent(`${post.frontmatter.title} by ${author} ${this.props.location.href}`);
     const reportMistakeUrl = 'https://github.com/ilyagru/ilyagru.github.io/issues/new?labels=mistake';
+
     const metaImage = post.frontmatter.featuredImage
-      ? `${this.props.data.site.siteMetadata.siteUrl}${post.frontmatter.featuredImage.childImageSharp.fixed.src}`
+      ? getSrc(post.frontmatter.featuredImage.childImageSharp.gatsbyImageData)
       : '';
 
     return (
@@ -94,9 +96,7 @@ export const blogPostQuery = graphql`
         summary
         featuredImage {
           childImageSharp {
-            fixed(width: 1200, height: 630) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 1200, height: 630, layout: FIXED)
           }
         }
       }

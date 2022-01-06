@@ -6,5 +6,6 @@ module.exports = {
   plugins: ['jsx-a11y'],
   rules: {
     semi: 2,
+    'no-console': 2,
   },
 };

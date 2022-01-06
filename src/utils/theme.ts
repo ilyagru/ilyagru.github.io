@@ -1,3 +1,43 @@
+import { DefaultTheme } from 'styled-components';
+
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    accentColor: string;
+    accentColorDark: string;
+
+    radius: string;
+    transition: string;
+    bodyTransition: string;
+    navbarCardBoxShadow: string;
+    cardBoxShadow: string;
+    montserratFont: string;
+    merriweatherFont: string;
+    oxygenMonoFont: string;
+
+    // Colors
+    mainBackgroundColor: string;
+    grayColor: string;
+    textColor: string;
+    textColorReversed: string;
+    accentBackgroundColor: string;
+    backgroundColor: string;
+    backgroundColorTransparent: string;
+
+    // Code colors
+    commentColor: string;
+    keywordColor: string;
+    numberColor: string;
+    stringColor: string;
+    attrValueColor: string;
+    punctuationColor: string;
+    booleanColor: string;
+    functionColor: string;
+    builtinColor: string;
+    operatorColor: string;
+    classNameColor: string;
+  }
+}
+
 const baseTheme = {
   // Base colors
   accentColor: '#DAA520',
@@ -17,7 +57,7 @@ const baseTheme = {
   oxygenMonoFont: "'Oxygen Mono', monospace",
 };
 
-const lightTheme = {
+const lightTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
   mainBackgroundColor: '#fff',
@@ -43,7 +83,7 @@ const lightTheme = {
   classNameColor: '#6A4C93',
 };
 
-const darkTheme = {
+const darkTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
   mainBackgroundColor: '#222529',

@@ -1,24 +1,25 @@
-export const isWindowDefined = () => typeof window !== `undefined`;
+export const isWindowDefined = () => typeof window !== 'undefined';
 export const isBrowserChrome = () => isWindowDefined() && window.chrome !== undefined;
 export const getBodyHeight = () => document.body.scrollHeight;
 export const getVisibleBodyHeight = () => (isWindowDefined() ? window.innerHeight : 0);
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+const keys: { [key: number]: number } = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
-function preventDefault(e) {
-  e = e || window.event;
-  if (e.preventDefault) {
-    e.preventDefault();
+function preventDefault(event: Event) {
+  const eventInternal = event || window.event;
+  if (eventInternal.preventDefault) {
+    eventInternal.preventDefault();
   }
-  e.returnValue = false;
+  eventInternal.returnValue = false;
 }
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
+function preventDefaultForScrollKeys(event: KeyboardEvent) {
+  if (keys[event.keyCode]) {
+    preventDefault(event);
   }
+
+  return false;
 }
 
 export const disableScroll = () => {
@@ -44,6 +45,7 @@ export const enableScroll = () => {
     window.removeEventListener('DOMMouseScroll', preventDefault, false);
     window.removeEventListener('wheel', preventDefault);
   }
+
   window.onwheel = null;
   window.ontouchmove = null;
   document.onkeydown = null;

@@ -86,25 +86,11 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## TODO:
 
-### Migrate to TypeScript
-
-In general, TypeScript is not well supported yet, for example `gatsby-*.js` files are going to stay JS, codegen doesn't seem encouraging, also getting `GraphQLDocumentError: Unknown fragment "GatsbyImageSharpFluid"` for image fragments. Styled-components types could potentially by a mess. So maybe later...
-
-#### QuickStart
-
-- https://dev.to/speshov/how-to-setup-gatsbyjs-starter-with-typescript-eslint-prettier-4jh3
-- https://www.arden.nl/setting-up-a-gatsby-js-starter-with-type-script-es-lint-prettier-and-pre-commit-hooks
-- https://specific.solutions.limited/blog/gatsby-configuration-in-typescript
-
-##### TypeScript plugin
-
-- https://www.gatsbyjs.org/packages/gatsby-plugin-typescript/
-- https://www.gatsbyjs.org/packages/gatsby-plugin-ts/
-
-##### Codegen
+### Codegen
 
 - https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/
 - https://github.com/cometkim/gatsby-plugin-typegen
+- https://specific.solutions.limited/blog/gatsby-configuration-in-typescript
 
 ### Page transitions
 

@@ -1,12 +1,16 @@
 import React from 'react';
-import PT from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { rhythm } from '../utils/typography';
 
-function Bio({ slug }) {
-  let done;
+type Props = {
+  slug?: string;
+};
+
+function Bio({ slug = '' }: Props) {
+  let done: string;
+
   switch (slug) {
     case 'my-music':
       done = 'Hand-picked';
@@ -31,7 +35,7 @@ function Bio({ slug }) {
         return (
           <aside
             style={{
-              display: `flex`,
+              display: 'flex',
               marginBottom: rhythm(2.5),
             }}
           >
@@ -42,16 +46,16 @@ function Bio({ slug }) {
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
                 minWidth: 80,
-                borderRadius: `100%`,
+                borderRadius: '100%',
               }}
               imgStyle={{
-                borderRadius: `50%`,
+                borderRadius: '50%',
               }}
             />
             <p>
-              {done} by <strong>{author}</strong>, a diversified developer who lives and works in Europe
-              building nice things. On this blog I post not only programming stuff. You can also find me on
-              {` `}
+              {done} by <strong>{author}</strong>, a senior developer with diversified experience in different
+              domains who lives and works in Europe building nice things. On this blog I post not only
+              programming stuff. You can also find me on{' '}
               <a
                 href={`https://github.com/${social.github}`}
                 target="_blank"
@@ -75,14 +79,6 @@ function Bio({ slug }) {
     />
   );
 }
-
-Bio.defaultProps = {
-  slug: '',
-};
-
-Bio.propTypes = {
-  slug: PT.string,
-};
 
 const bioQuery = graphql`
   query BioQuery {

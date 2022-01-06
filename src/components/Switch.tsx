@@ -1,7 +1,5 @@
 import React from 'react';
-import PT from 'prop-types';
 import styled, { css } from 'styled-components';
-
 import { rhythm } from '../utils/typography';
 
 const SwitchInput = styled.input`
@@ -25,7 +23,11 @@ const SwitchTrack = styled.label`
   transition: background-color 0.2s;
 `;
 
-const SwitchCircle = styled.span`
+type SwitchCircleProps = {
+  isChecked: boolean;
+};
+
+const SwitchCircle = styled.span<SwitchCircleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,36 +42,43 @@ const SwitchCircle = styled.span`
   box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
   z-index: 1;
 
-  ${css`
-    ${({ checked }) => (checked ? 'left: 44px;' : '')}
+  ${css<SwitchCircleProps>`
+    ${({ isChecked }) => (isChecked ? 'left: 44px;' : '')}
   `}
 `;
 
-const SwitchText = styled.span`
+type SwitchTextProps = {
+  isChecked: boolean;
+};
+
+const SwitchText = styled.span<SwitchTextProps>`
   font-size: ${rhythm(7 / 16)};
   font-weight: 300;
   position: absolute;
-  right: ${({ checked }) => (checked ? 32 : 10)}px;
+  right: ${({ isChecked }) => (isChecked ? 32 : 10)}px;
   text-align: center;
   vertical-align: center;
   color: ${({ theme }) => theme.textColor};
   transition: ${({ theme }) => theme.transition};
 `;
 
-const Switch = ({ onLabel, offLabel, onToggle, isOn }) => {
+type Props = {
+  onLabel: string;
+  offLabel: string;
+  onToggle: () => void;
+  isOn: boolean;
+};
+
+function Switch({ onLabel, offLabel, onToggle, isOn }: Props) {
   return (
     <>
-      <SwitchInput id={`switch`} checked={isOn} onChange={onToggle} type="checkbox" />
-      <SwitchTrack checked={isOn} htmlFor={`switch`}>
-        <SwitchCircle checked={isOn}></SwitchCircle>
-        <SwitchText checked={isOn}>{isOn ? onLabel : offLabel}</SwitchText>
+      <SwitchInput id="switch" onChange={onToggle} type="checkbox" />
+      <SwitchTrack htmlFor="switch">
+        <SwitchCircle isChecked={isOn} />
+        <SwitchText isChecked={isOn}>{isOn ? onLabel : offLabel}</SwitchText>
       </SwitchTrack>
     </>
   );
-};
-
-Switch.propTypes = {
-  isOn: PT.bool.isRequired,
-};
+}
 
 export default Switch;

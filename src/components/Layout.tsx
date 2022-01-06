@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import PT from 'prop-types';
+import React, { ReactElement, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import Navbar from './Navbar';
@@ -8,7 +7,13 @@ import { LayoutContainer, HeaderContainer, Title, TitleSecondary, TitleLink } fr
 import GlobalStyle from '../utils/globalStyle';
 import useTheme from '../hooks/useTheme';
 
-const Layout = ({ title, children, location }) => {
+type Props = {
+  title: string;
+  children: ReactElement | ReactElement[];
+  location: Location;
+};
+
+function Layout({ title, children, location }: Props) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { toggleTheme, theme, isLight } = useTheme();
 
@@ -42,21 +47,11 @@ const Layout = ({ title, children, location }) => {
         <main>{children}</main>
         <footer>
           <TitleLink title={`${title} `} />
-          &copy; {new Date().getFullYear()}, from Europe with
-          {` `}
-          🧡
+          &copy; {new Date().getFullYear()}, from Europe with 🧡
         </footer>
       </LayoutContainer>
     </ThemeProvider>
   );
-};
-
-Layout.propTypes = {
-  title: PT.string.isRequired,
-  children: PT.oneOfType([PT.node, PT.arrayOf(PT.node)]).isRequired,
-  location: PT.shape({
-    pathname: PT.string.isRequired,
-  }),
-};
+}
 
 export default Layout;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MenuButton renders correctly 1`] = `
+exports[`MenuButton should render correctly 1`] = `
 <button
   className="sc-bdvvtL irLYvN"
   onClick={[MockFunction]}

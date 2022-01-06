@@ -1,10 +1,12 @@
 import React from 'react';
-import PT from 'prop-types';
 import styled, { css } from 'styled-components';
-
 import { enableScroll, disableScroll } from '../utils/window';
 
-const BaseButton = styled.button`
+type BaseButtonProps = {
+  isMenuOpen: boolean;
+};
+
+const BaseButton = styled.button<BaseButtonProps>`
   border: 1px solid ${({ theme }) => theme.accentColor};
   background-color: transparent;
   outline: 0;
@@ -27,8 +29,17 @@ const BaseButton = styled.button`
         `}
 `;
 
-function MenuButton({ isMenuOpen, onClick }) {
-  isMenuOpen ? disableScroll() : enableScroll();
+type Props = {
+  isMenuOpen?: boolean;
+  onClick: () => void;
+};
+
+function MenuButton({ isMenuOpen = false, onClick }: Props) {
+  if (isMenuOpen) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
 
   return (
     <BaseButton isMenuOpen={isMenuOpen} onClick={onClick}>
@@ -36,14 +47,5 @@ function MenuButton({ isMenuOpen, onClick }) {
     </BaseButton>
   );
 }
-
-MenuButton.defaultProps = {
-  isMenuOpen: false,
-};
-
-MenuButton.propTypes = {
-  isMenuOpen: PT.bool,
-  onClick: PT.func.isRequired,
-};
 
 export default MenuButton;

@@ -10,6 +10,8 @@ module.exports = {
     },
   },
   plugins: [
+    // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
+    // don't need to define it here (just if you need to change the options)
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -89,24 +91,22 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map((edge) => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.summary || edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
-                  guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                  enclosure: {
-                    url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`.replace(
-                      'https',
-                      'http'
-                    ),
-                    type: 'image/png',
-                  },
-                });
-              });
-            },
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark.edges.map((edge) => ({
+                ...edge.node.frontmatter,
+                description: edge.node.frontmatter.summary || edge.node.excerpt,
+                date: edge.node.frontmatter.date,
+                url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                custom_elements: [{ 'content:encoded': edge.node.html }],
+                enclosure: {
+                  url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`.replace(
+                    'https',
+                    'http'
+                  ),
+                  type: 'image/png',
+                },
+              })),
             query: `
             {
               allMarkdownRemark(

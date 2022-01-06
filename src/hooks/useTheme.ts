@@ -8,7 +8,7 @@ const useTheme = () => {
   const matchesDark =
     isWindow && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  const initialTheme = storedTheme ? storedTheme : matchesDark ? 'dark' : 'light';
+  const initialTheme = storedTheme || (matchesDark ? 'dark' : 'light');
 
   const [theme, setTheme] = useState(initialTheme);
 

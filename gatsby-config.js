@@ -148,7 +148,6 @@ module.exports = {
         short_name: `Gruzhevstasy`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#DAA520`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
         legacy: true,

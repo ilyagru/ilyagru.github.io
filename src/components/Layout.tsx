@@ -1,11 +1,11 @@
 import React, { ReactElement, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
+import useDarkMode from '../hooks/useDarkMode';
 import Navbar from './Navbar';
 import MenuButton from './MenuButton';
 import { LayoutContainer, HeaderContainer, Title, TitleSecondary, TitleLink } from './Layout.components';
 import GlobalStyle from '../utils/globalStyle';
-import useTheme from '../hooks/useTheme';
 
 type Props = {
   title: string;
@@ -15,7 +15,7 @@ type Props = {
 
 function Layout({ title, children, location }: Props) {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const { toggleTheme, theme, isLight } = useTheme();
+  const { theme, isDark, toggleTheme } = useDarkMode();
 
   const rootPath = `${__PATH_PREFIX__}/`;
   const isHome = location.pathname === rootPath;
@@ -42,7 +42,7 @@ function Layout({ title, children, location }: Props) {
               aria-expanded={isMenuOpen}
             />
           </HeaderContainer>
-          <Navbar isMenuOpen={isMenuOpen} toggleTheme={toggleTheme} isLight={isLight} />
+          <Navbar isMenuOpen={isMenuOpen} isDark={isDark} toggleTheme={toggleTheme} />
         </header>
         <main>{children}</main>
         <footer>

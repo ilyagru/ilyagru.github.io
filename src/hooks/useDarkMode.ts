@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { lightTheme, darkTheme } from '../utils/theme';
 import { isWindowDefined } from '../utils/window';
 
-const useTheme = () => {
+const useDarkMode = () => {
   const isWindow = isWindowDefined();
   const storedTheme = isWindow && window.localStorage.getItem('theme');
   const matchesDark =
@@ -12,24 +12,24 @@ const useTheme = () => {
 
   const [theme, setTheme] = useState(initialTheme);
 
-  const isLight = theme === 'light';
-  const toggleTheme = () => setTheme(isLight ? 'dark' : 'light');
+  const isDark = theme === 'dark';
+  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   useEffect(() => {
     if (isWindow) {
       window.localStorage.setItem('theme', theme);
       // Remove dark critical styles
-      if (isLight) {
+      if (!isDark) {
         document.body.classList.remove('dark');
       }
     }
-  }, [isWindow, isLight, theme]);
+  }, [isWindow, isDark, theme]);
 
   return {
-    isLight,
-    theme: isLight ? lightTheme : darkTheme,
+    isDark,
+    theme: isDark ? darkTheme : lightTheme,
     toggleTheme,
   };
 };
 
-export default useTheme;
+export default useDarkMode;

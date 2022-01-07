@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { useTheme } from 'styled-components';
 
 type Props = {
   description?: string;
@@ -12,6 +13,8 @@ type Props = {
 };
 
 function SEO({ description, lang = 'en', meta = [], keywords = [], title, image }: Props) {
+  const theme = useTheme();
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -73,6 +76,16 @@ function SEO({ description, lang = 'en', meta = [], keywords = [], title, image 
               {
                 name: 'google-site-verification',
                 content: 'KGqdfp9zu891keaiGwHM4etp_F_vU-Wav4LfQ3nBamc',
+              },
+              {
+                name: 'theme-color',
+                content: theme.accentColor,
+                media: '(prefers-color-scheme: light)',
+              },
+              {
+                name: 'theme-color',
+                content: theme.accentColorReversed,
+                media: '(prefers-color-scheme: dark)',
               },
             ]
               .concat(keywords.length > 0 ? { name: 'keywords', content: keywords.join(', ') } : [])

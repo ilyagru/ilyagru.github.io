@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
+import { useTheme } from 'styled-components';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import { PoseGroup } from 'react-pose';
 
@@ -9,11 +9,11 @@ import { NavContainer, Nav, NavList, NavLink } from './Navbar.components';
 type Props = {
   isMenuOpen?: boolean;
   toggleTheme: () => void;
-  isLight: boolean;
+  isDark: boolean;
 };
 
-function Navbar({ isMenuOpen = false, toggleTheme, isLight }: Props) {
-  const theme = useContext(ThemeContext);
+function Navbar({ isMenuOpen = false, toggleTheme, isDark }: Props) {
+  const theme = useTheme();
 
   const activeLinkStyle = {
     boxShadow: 'none',
@@ -57,7 +57,7 @@ function Navbar({ isMenuOpen = false, toggleTheme, isLight }: Props) {
                         RSS feed
                       </a>
                     </NavLink>
-                    <Switch onToggle={toggleTheme} isOn={!isLight} onLabel="dark" offLabel="light" />
+                    <Switch onToggle={toggleTheme} isOn={isDark} onLabel="dark" offLabel="light" />
                   </NavList>
                 </Nav>
               </NavContainer>

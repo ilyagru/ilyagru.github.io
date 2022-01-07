@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     accentColor: string;
-    accentColorDark: string;
+    accentColorReversed: string;
 
     radius: string;
     transition: string;
@@ -39,10 +39,6 @@ declare module 'styled-components' {
 }
 
 const baseTheme = {
-  // Base colors
-  accentColor: '#DAA520',
-  accentColorDark: '#E89456',
-
   // Sizes
   radius: '3px',
   // Animations
@@ -60,8 +56,9 @@ const baseTheme = {
 const lightTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
+  accentColor: '#DAA520',
+  accentColorReversed: '#E89456',
   mainBackgroundColor: '#fff',
-  accentColor: baseTheme.accentColor,
   grayColor: 'rgba(0,0,0,0.59)',
   textColor: '#000',
   textColorReversed: '#fff',
@@ -71,7 +68,7 @@ const lightTheme: DefaultTheme = {
 
   // Code colors
   commentColor: '#B5B5B6',
-  keywordColor: baseTheme.accentColor,
+  keywordColor: '#DAA520',
   numberColor: '#A37ACC',
   stringColor: '#AAD273',
   attrValueColor: '#AAD273',
@@ -86,8 +83,9 @@ const lightTheme: DefaultTheme = {
 const darkTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
+  accentColor: '#E89456',
+  accentColorReversed: '#DAA520',
   mainBackgroundColor: '#222529',
-  accentColor: baseTheme.accentColorDark,
   grayColor: 'rgba(191, 191, 191, 0.59)',
   textColor: '#fff',
   textColorReversed: '#000',
@@ -97,7 +95,7 @@ const darkTheme: DefaultTheme = {
 
   // Code colors
   commentColor: '#78787D',
-  keywordColor: baseTheme.accentColorDark,
+  keywordColor: '#E89456',
   numberColor: '#A897FF',
   stringColor: '#bae67e',
   attrValueColor: '#bae67e',

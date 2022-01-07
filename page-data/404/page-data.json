@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-404-tsx",
+    "path": "/404/",
+    "result": {"data":{"notFoundImage":{"childImageSharp":{"gatsbyImageData":{"layout":"fullWidth","backgroundColor":"#080808","images":{"fallback":{"src":"/static/c7a863ff93baabfb804e3bd7c96be03f/b0782/not-found.png","srcSet":"/static/c7a863ff93baabfb804e3bd7c96be03f/68bd2/not-found.png 750w,\n/static/c7a863ff93baabfb804e3bd7c96be03f/f1641/not-found.png 1080w,\n/static/c7a863ff93baabfb804e3bd7c96be03f/b0782/not-found.png 1216w","sizes":"100vw"},"sources":[{"srcSet":"/static/c7a863ff93baabfb804e3bd7c96be03f/f4ea5/not-found.webp 750w,\n/static/c7a863ff93baabfb804e3bd7c96be03f/30db2/not-found.webp 1080w,\n/static/c7a863ff93baabfb804e3bd7c96be03f/f3a1c/not-found.webp 1216w","type":"image/webp","sizes":"100vw"}]},"width":1,"height":0.5756578947368421}}},"site":{"siteMetadata":{"title":"Gruzhevstasy"}}},"pageContext":{}},
+    "staticQueryHashes": ["3128451518","4268320825"]}

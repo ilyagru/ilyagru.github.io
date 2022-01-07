@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-information-tsx",
+    "path": "/my-music",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Gruzhevstasy"}},"markdownRemark":{"id":"610e7c1f-ba36-58e3-aa6a-9860f545d6cb","html":"<p style=\"background-color: #f8f8fa; border-radius: 3px; line-height: 0;\">\n  <iframe\n    allow=\"autoplay *; encrypted-media *;\"\n    style=\"overflow: hidden; background: transparent;\"\n    sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts\"\n    src=\"https://embed.music.apple.com/pl/playlist/feeling-so-much-love/pl.u-V9D7v0NujMyl1b?app=music\">\n  </iframe>\n</p>","excerpt":"","frontmatter":{"title":"What I Listen to","summary":"The music that I listen to."}}},"pageContext":{"slug":"my-music","source":"information"}},
+    "staticQueryHashes": ["3128451518","4268320825","637957696"]}

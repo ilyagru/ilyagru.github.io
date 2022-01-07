@@ -1,5 +1,9 @@
 import { DefaultTheme } from 'styled-components';
 
+// In case of color changes,
+// they should be updated in the global styles as well.
+// import GlobalStyle from './globalStyle';
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     radius: string;
@@ -56,54 +60,54 @@ const lightTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
   accentColorString: '#DAA520',
-  accentColor: 'var(--accent-color)',
-  mainBackgroundColor: 'var(--main-background-color)',
-  grayColor: 'var(--gray-color)',
-  textColor: 'var(--text-color)',
-  textColorReversed: 'var(--text-color-reversed)',
-  accentBackgroundColor: 'var(--accent-background-color)',
-  backgroundColor: 'var(--background-color)',
-  backgroundColorTransparent: 'var(--background-color-transparent)',
+  accentColor: 'var(--accent-color, #DAA520)',
+  mainBackgroundColor: 'var(--main-background-color, #fff)',
+  grayColor: 'var(--gray-color, rgba(0,0,0,0.59))',
+  textColor: 'var(--text-color, #000)',
+  textColorReversed: 'var(--text-color-reversed, #fff)',
+  accentBackgroundColor: 'var(--accent-background-color, #FFFAEF)',
+  backgroundColor: 'var(--background-color, rgb(248, 248, 250))',
+  backgroundColorTransparent: 'var(--background-color-transparent, rgba(248,248,255,.7))',
 
   // Code colors
-  commentColor: 'var(--comment-color)',
-  keywordColor: 'var(--keyword-color)',
-  numberColor: 'var(--number-color)',
-  stringColor: 'var(--string-color)',
-  attrValueColor: 'var(--attr-value-color)',
-  punctuationColor: 'var(--punctuation-color)',
-  booleanColor: 'var(--boolean-color)',
-  functionColor: 'var(--function-color)',
-  builtinColor: 'var(--builtin-color)',
-  operatorColor: 'var(--operator-color)',
-  classNameColor: 'var(--class-name-color)',
+  commentColor: 'var(--comment-color, #B5B5B6)',
+  keywordColor: 'var(--keyword-color, #DAA520)',
+  numberColor: 'var(--number-color, #A37ACC)',
+  stringColor: 'var(--string-color, #AAD273)',
+  attrValueColor: 'var(--attr-value-color, #AAD273)',
+  punctuationColor: 'var(--punctuation-color, #8DADE1)',
+  booleanColor: 'var(--boolean-color, #A37ACC)',
+  functionColor: 'var(--function-color, #F28779)',
+  builtinColor: 'var(--builtin-color, #E8905B)',
+  operatorColor: 'var(--operator-color, #819ECD)',
+  classNameColor: 'var(--class-name-color, #6A4C93)',
 };
 
 const darkTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
   accentColorString: '#E89456',
-  accentColor: 'var(--accent-color)',
-  mainBackgroundColor: 'var(--main-background-color)',
-  grayColor: 'var(--gray-color)',
-  textColor: 'var(--text-color)',
-  textColorReversed: 'var(--text-color-reversed)',
-  accentBackgroundColor: 'var(--accent-background-color)',
-  backgroundColor: 'var(--background-color)',
-  backgroundColorTransparent: 'var(--background-color-transparent)',
+  accentColor: 'var(--accent-color, #E89456)',
+  mainBackgroundColor: 'var(--main-background-color, #222529)',
+  grayColor: 'var(--gray-color, rgba(191, 191, 191, 0.59))',
+  textColor: 'var(--text-color, #fff)',
+  textColorReversed: 'var(--text-color-reversed, #000)',
+  accentBackgroundColor: 'var(--accent-background-color, rgba(232, 146, 84, 0.09))',
+  backgroundColor: 'var(--background-color, #454B52)',
+  backgroundColorTransparent: 'var(--background-color-transparent, rgba(70,70,77,.7))',
 
   // Code colors
-  commentColor: 'var(--comment-color)',
-  keywordColor: 'var(--keyword-color)',
-  numberColor: 'var(--number-color)',
-  stringColor: 'var(--string-color)',
-  attrValueColor: 'var(--attr-value-color)',
-  punctuationColor: 'var(--punctuation-color)',
-  booleanColor: 'var(--boolean-color)',
-  functionColor: 'var(--function-color)',
-  builtinColor: 'var(--builtin-color)',
-  operatorColor: 'var(--operator-color)',
-  classNameColor: 'var(--class-name-color)',
+  commentColor: 'var(--comment-color, #78787D)',
+  keywordColor: 'var(--keyword-color, #E89456)',
+  numberColor: 'var(--number-color, #A897FF)',
+  stringColor: 'var(--string-color, #bae67e)',
+  attrValueColor: 'var(--attr-value-color, #bae67e)',
+  punctuationColor: 'var(--punctuation-color, #89DDFF)',
+  booleanColor: 'var(--boolean-color, #A897FF)',
+  functionColor: 'var(--function-color, #DC7572)',
+  builtinColor: 'var(--builtin-color, #F283B6)',
+  operatorColor: 'var(--operator-color, #AEC1DF)',
+  classNameColor: 'var(--class-name-color, #C2AFF0)',
 };
 
 export { lightTheme, darkTheme };

@@ -4,31 +4,35 @@ import { isWindowDefined } from '../utils/window';
 
 const useDarkMode = () => {
   const isWindow = isWindowDefined();
+
   const storedTheme = isWindow && window.localStorage.getItem('theme');
   const matchesDark =
     isWindow && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
   const initialTheme = storedTheme || (matchesDark ? 'dark' : 'light');
 
   const [theme, setTheme] = useState(initialTheme);
-
   const isDark = theme === 'dark';
-  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   useEffect(() => {
     if (isWindow) {
       window.localStorage.setItem('theme', theme);
-      // Remove dark critical styles
-      if (!isDark) {
+
+      if (isDark) {
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+      } else {
         document.body.classList.remove('dark');
+        document.body.classList.add('light');
       }
     }
   }, [isWindow, isDark, theme]);
 
+  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
+
   return {
     isDark,
-    theme: isDark ? darkTheme : lightTheme,
     toggleTheme,
+    theme: isDark ? darkTheme : lightTheme,
   };
 };
 

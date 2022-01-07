@@ -86,16 +86,14 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## TODO:
 
-### Codegen
+- [ ] GraphQL codegen types
 
-- https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/
-- https://github.com/cometkim/gatsby-plugin-typegen
-- https://specific.solutions.limited/blog/gatsby-configuration-in-typescript
+  - https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/
+  - https://github.com/cometkim/gatsby-plugin-typegen
+  - https://specific.solutions.limited/blog/gatsby-configuration-in-typescript
 
-### Page transitions
-
-https://www.gatsbyjs.org/docs/adding-page-transitions-with-plugin-transition-link/
-
-### Fix incorrect button color on opening the website
-
-https://curtistimson.co.uk/post/gatsbyjs/add-body-class-gatsbyjs-fouc/
+- [x] TypeScript
+- [ ] Page transitions
+  - https://www.gatsbyjs.org/docs/adding-page-transitions-with-plugin-transition-link/
+- [ ] Fix incorrect button color on opening the website
+  - https://curtistimson.co.uk/post/gatsbyjs/add-body-class-gatsbyjs-fouc/

@@ -79,12 +79,12 @@ function SEO({ description, lang = 'en', meta = [], keywords = [], title, image 
               },
               {
                 name: 'theme-color',
-                content: theme.accentColor,
+                content: theme.accentColorString,
                 media: '(prefers-color-scheme: light)',
               },
               {
                 name: 'theme-color',
-                content: theme.accentColorReversed,
+                content: theme.accentColorString,
                 media: '(prefers-color-scheme: dark)',
               },
             ]

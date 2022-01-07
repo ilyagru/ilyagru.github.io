@@ -276,10 +276,11 @@ In my opinion, this one is pretty amazing way to implement toasts display in the
 <!-- TODO: Replace with React component -->
 <p style="background-color: #f8f8fa; border-radius: 3px; line-height: 0;">
   <iframe
-    allow="autoplay *; encrypted-media *;"
-    style="overflow: hidden; background: transparent; min-height: 150px;"
-    sandbox="allow-forms allow-popups allow-same-origin allow-scripts"
-    src="https://embed.music.apple.com/us/album/%D1%82%D0%B5%D0%BB%D0%B5%D0%BF%D0%BE%D1%80%D1%82/1061990764?i=1061991212&app=music">
+    allow="autoplay *; encrypted-media *; fullscreen *"
+    frameborder="0"
+    height="150px"
+    style="width:100%;overflow:hidden;background:transparent;min-height:150px;"
+    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/pl/album/%D1%82%D0%B5%D0%BB%D0%B5%D0%BF%D0%BE%D1%80%D1%82/1454458835?i=1454458852">
   </iframe>
 </p>
 

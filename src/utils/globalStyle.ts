@@ -2,6 +2,52 @@ import { createGlobalStyle } from 'styled-components';
 import { rhythm } from './typography';
 
 const GlobalStyle = createGlobalStyle`
+  .light {
+    --accent-color: #DAA520;
+    --main-background-color: #fff;
+    --gray-color: rgba(0,0,0,0.59);
+    --text-color: #000;
+    --text-color-reversed: #fff;
+    --accent-background-color: #FFFAEF;
+    --background-color: rgb(248, 248, 250);
+    --background-color-transparent: rgba(248,248,255,.7);
+
+    --comment-color: #B5B5B6;
+    --keyword-color: #DAA520;
+    --number-color: #A37ACC;
+    --string-color: #AAD273;
+    --attr-value-color: #AAD273;
+    --punctuation-color: #8DADE1;
+    --boolean-color: #A37ACC;
+    --function-color: #F28779;
+    --builtin-color: #E8905B;
+    --operator-color: #819ECD;
+    --class-name-color: #6A4C93;
+  }
+
+  .dark {
+    --accent-color: #E89456;
+    --main-background-color: #222529;
+    --gray-color: rgba(191, 191, 191, 0.59);
+    --text-color: #fff;
+    --text-color-reversed: #000;
+    --accent-background-color: rgba(232, 146, 84, 0.09);
+    --background-color: #454B52;
+    --background-color-transparent: rgba(70,70,77,.7);
+
+    --comment-color: #78787D;
+    --keyword-color: #E89456;
+    --number-color: #A897FF;
+    --string-color: #bae67e;
+    --attr-value-color: #bae67e;
+    --punctuation-color: #89DDFF;
+    --boolean-color: #A897FF;
+    --function-color: #DC7572;
+    --builtin-color: #F283B6;
+    --operator-color: #AEC1DF;
+    --class-name-color: #C2AFF0;
+  }
+
   ::selection {
     background: ${({ theme }) => theme.accentBackgroundColor};
   }

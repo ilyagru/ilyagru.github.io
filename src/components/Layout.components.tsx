@@ -1,5 +1,4 @@
 import React from 'react';
-import PT from 'prop-types';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 
@@ -12,27 +11,31 @@ export const LayoutContainer = styled.div`
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `;
 
-export const TitleLink = ({ title }) => {
+type TitleLinkProps = {
+  title: string;
+};
+
+export function TitleLink({ title }: TitleLinkProps) {
   return (
     <Link
       style={{
-        boxShadow: `none`,
-        textDecoration: `none`,
-        color: `inherit`,
-        transition: `none`,
+        boxShadow: 'none',
+        textDecoration: 'none',
+        color: 'inherit',
+        transition: 'none',
       }}
-      to={`/`}
+      to="/"
     >
       {title}
     </Link>
   );
+}
+
+type HeaderContainerProps = {
+  isHome: boolean;
 };
 
-TitleLink.propTypes = {
-  title: PT.string.isRequired,
-};
-
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div<HeaderContainerProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;

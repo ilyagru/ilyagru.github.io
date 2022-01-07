@@ -1,9 +1,20 @@
 import React from 'react';
-import PT from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { useTheme } from 'styled-components';
 
-function SEO({ description, lang, meta, keywords, title, image }) {
+type Props = {
+  description?: string;
+  lang?: string;
+  meta?: [];
+  keywords?: string[];
+  title: string;
+  image?: string;
+};
+
+function SEO({ description, lang = 'en', meta = [], keywords = [], title, image }: Props) {
+  const theme = useTheme();
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -12,11 +23,11 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         const metaImage = image
           ? [
               {
-                property: `og:image`,
+                property: 'og:image',
                 content: image,
               },
               {
-                property: `twitter:image`,
+                property: 'twitter:image',
                 content: image,
               },
             ]
@@ -31,43 +42,53 @@ function SEO({ description, lang, meta, keywords, title, image }) {
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
               {
-                name: `description`,
+                name: 'description',
                 content: metaDescription,
               },
               {
-                property: `og:title`,
+                property: 'og:title',
                 content: title,
               },
               {
-                property: `og:description`,
+                property: 'og:description',
                 content: metaDescription,
               },
               {
-                property: `og:type`,
-                content: `website`,
+                property: 'og:type',
+                content: 'website',
               },
               {
-                name: `twitter:card`,
-                content: `summary`,
+                name: 'twitter:card',
+                content: 'summary',
               },
               {
-                name: `twitter:creator`,
+                name: 'twitter:creator',
                 content: data.site.siteMetadata.author,
               },
               {
-                name: `twitter:title`,
+                name: 'twitter:title',
                 content: title,
               },
               {
-                name: `twitter:description`,
+                name: 'twitter:description',
                 content: metaDescription,
               },
               {
-                name: `google-site-verification`,
-                content: `KGqdfp9zu891keaiGwHM4etp_F_vU-Wav4LfQ3nBamc`,
+                name: 'google-site-verification',
+                content: 'KGqdfp9zu891keaiGwHM4etp_F_vU-Wav4LfQ3nBamc',
+              },
+              {
+                name: 'theme-color',
+                content: theme.accentColorString,
+                media: '(prefers-color-scheme: light)',
+              },
+              {
+                name: 'theme-color',
+                content: theme.accentColorString,
+                media: '(prefers-color-scheme: dark)',
               },
             ]
-              .concat(keywords.length > 0 ? { name: `keywords`, content: keywords.join(`, `) } : [])
+              .concat(keywords.length > 0 ? { name: 'keywords', content: keywords.join(', ') } : [])
               .concat(meta)
               .concat(metaImage)}
           />
@@ -76,22 +97,6 @@ function SEO({ description, lang, meta, keywords, title, image }) {
     />
   );
 }
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-  image: null,
-};
-
-SEO.propTypes = {
-  description: PT.string,
-  lang: PT.string,
-  meta: PT.array,
-  keywords: PT.arrayOf(PT.string),
-  title: PT.string.isRequired,
-  image: PT.string,
-};
 
 export default SEO;
 

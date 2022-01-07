@@ -3,8 +3,8 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
-  const informationTemplate = path.resolve(`./src/templates/information.js`);
+  const blogPostTemplate = path.resolve(`./src/templates/blog-post.tsx`);
+  const informationTemplate = path.resolve(`./src/templates/information.tsx`);
 
   return graphql(
     `
@@ -55,7 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Create information pages
     const informations = items.filter((item) => item.node.fields.source === 'information');
 
-    informations.forEach((information, index) => {
+    informations.forEach((information) => {
       createPage({
         path: information.node.fields.slug,
         component: informationTemplate,

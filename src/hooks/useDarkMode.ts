@@ -2,34 +2,38 @@ import { useState, useEffect } from 'react';
 import { lightTheme, darkTheme } from '../utils/theme';
 import { isWindowDefined } from '../utils/window';
 
-const useTheme = () => {
+const useDarkMode = () => {
   const isWindow = isWindowDefined();
+
   const storedTheme = isWindow && window.localStorage.getItem('theme');
   const matchesDark =
     isWindow && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  const initialTheme = storedTheme ? storedTheme : matchesDark ? 'dark' : 'light';
+  const initialTheme = storedTheme || (matchesDark ? 'dark' : 'light');
 
   const [theme, setTheme] = useState(initialTheme);
-
-  const isLight = theme === 'light';
-  const toggleTheme = () => setTheme(isLight ? 'dark' : 'light');
+  const isDark = theme === 'dark';
 
   useEffect(() => {
     if (isWindow) {
       window.localStorage.setItem('theme', theme);
-      // Remove dark critical styles
-      if (isLight) {
+
+      if (isDark) {
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+      } else {
         document.body.classList.remove('dark');
+        document.body.classList.add('light');
       }
     }
-  }, [isWindow, isLight, theme]);
+  }, [isWindow, isDark, theme]);
+
+  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   return {
-    isLight,
-    theme: isLight ? lightTheme : darkTheme,
+    isDark,
     toggleTheme,
+    theme: isDark ? darkTheme : lightTheme,
   };
 };
 
-export default useTheme;
+export default useDarkMode;

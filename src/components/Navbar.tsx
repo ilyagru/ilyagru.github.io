@@ -1,14 +1,19 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
+import { useTheme } from 'styled-components';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import { PoseGroup } from 'react-pose';
 
 import Switch from './Switch';
 import { NavContainer, Nav, NavList, NavLink } from './Navbar.components';
 
-const Navbar = ({ isMenuOpen, toggleTheme, isLight }) => {
-  const theme = useContext(ThemeContext);
+type Props = {
+  isMenuOpen?: boolean;
+  toggleTheme: () => void;
+  isDark: boolean;
+};
+
+function Navbar({ isMenuOpen = false, toggleTheme, isDark }: Props) {
+  const theme = useTheme();
 
   const activeLinkStyle = {
     boxShadow: 'none',
@@ -52,7 +57,7 @@ const Navbar = ({ isMenuOpen, toggleTheme, isLight }) => {
                         RSS feed
                       </a>
                     </NavLink>
-                    <Switch onToggle={toggleTheme} isOn={!isLight} />
+                    <Switch onToggle={toggleTheme} isOn={isDark} onLabel="dark" offLabel="light" />
                   </NavList>
                 </Nav>
               </NavContainer>
@@ -62,17 +67,7 @@ const Navbar = ({ isMenuOpen, toggleTheme, isLight }) => {
       }}
     />
   );
-};
-
-Navbar.defaultProps = {
-  isMenuOpen: false,
-};
-
-Navbar.propTypes = {
-  isMenuOpen: PropTypes.bool,
-  isLight: PropTypes.bool.isRequired,
-  toggleTheme: PropTypes.func.isRequired,
-};
+}
 
 const navbarQuery = graphql`
   query NavbarQuery {

@@ -5,7 +5,11 @@ export const Separator = styled.hr`
   margin-bottom: ${rhythm(1)};
 `;
 
-export const Date = styled.small`
+type DateTextProps = {
+  respectTopMargin?: boolean;
+};
+
+export const DateText = styled.small<DateTextProps>`
   ${{ ...scale(-1 / 5) }};
   margin-top: ${({ respectTopMargin = true }) => (respectTopMargin ? '' : rhythm(-1))};
   font-style: italic;

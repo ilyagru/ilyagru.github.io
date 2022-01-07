@@ -24,6 +24,7 @@ jobs:
             ${{ runner.os }}-node-
       - run: npm install
       - run: npm run lint
+      - run: npm run typecheck
       - run: npm test
         env:
           CI: true

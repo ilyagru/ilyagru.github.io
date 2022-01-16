@@ -92,21 +92,27 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map((edge) => ({
-                ...edge.node.frontmatter,
-                description: edge.node.frontmatter.summary || edge.node.excerpt,
-                date: edge.node.frontmatter.date,
-                url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
-                guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
-                custom_elements: [{ 'content:encoded': edge.node.html }],
-                enclosure: {
-                  url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`.replace(
-                    'https',
-                    'http'
-                  ),
-                  type: 'image/png',
-                },
-              })),
+              allMarkdownRemark.edges.map((edge) => {
+                const enclosure = edge.node.frontmatter.featuredImage
+                  ? {
+                      url: `${site.siteMetadata.siteUrl}${edge.node.frontmatter.featuredImage.publicURL}`.replace(
+                        'https',
+                        'http'
+                      ),
+                      type: 'image/png',
+                    }
+                  : undefined;
+
+                return {
+                  ...edge.node.frontmatter,
+                  description: edge.node.frontmatter.summary || edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  enclosure,
+                };
+              }),
             query: `
             {
               allMarkdownRemark(

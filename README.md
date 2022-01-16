@@ -48,23 +48,8 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 
     For a repository named like ilyagru.github.io. Deploying automatically by Github Actions on merging to develop.
 
-    Note: In this case you don’t need to specify `--prefix-paths` and your website needs to be pushed to master branch.
+    Note: In this case you don't need to specify `--prefix-paths` and your website needs to be pushed to master branch.
 
 ## TODO:
 
-- [ ] GraphQL codegen types
-
-  - https://www.gatsbyjs.org/packages/gatsby-plugin-graphql-codegen/
-  - https://github.com/cometkim/gatsby-plugin-typegen
-  - https://specific.solutions.limited/blog/gatsby-configuration-in-typescript
-  - https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/
-  - https://www.graphql-code-generator.com/docs/integrations/gatsby
-
-- [x] TypeScript
-- [ ] Page transitions
-
-  - https://www.gatsbyjs.org/docs/adding-page-transitions-with-plugin-transition-link/
-
-- [ ] Fix incorrect button color on opening the website
-
-  - https://curtistimson.co.uk/post/gatsbyjs/add-body-class-gatsbyjs-fouc/
+Todos are tracked either with the comment or in the related GitHub project.

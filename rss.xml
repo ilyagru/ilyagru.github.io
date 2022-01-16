@@ -1,4 +1,190 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gruzhevstasy RSS feed]]></title><description><![CDATA[A diversified developer who lives and works in Europe building nice things. On this blog I post not only programming stuff. You can also find me on GitHub.]]></description><link>https://ilyagru.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 07 Jan 2022 17:08:49 GMT</lastBuildDate><item><title><![CDATA[Week Section List in React Native (TypeScript)]]></title><description><![CDATA[A quick guide on how to create a universal week view list in React Native and have it typed with TypeScript so that a day in the week could consist of different types of data.]]></description><link>https://ilyagru.github.io/week-section-list-in-react-native-typescript</link><guid isPermaLink="false">https://ilyagru.github.io/week-section-list-in-react-native-typescript</guid><pubDate>Tue, 04 Aug 2020 12:59:00 GMT</pubDate><enclosure url="http://ilyagru.github.io/static/a06eb3e42c5af7114631d87305f18e41/week-section-list-in-react-native-typescript-featured-image.png" length="0" type="image/png"/><content:encoded>&lt;h2&gt;Assignment&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gruzhevstasy RSS feed]]></title><description><![CDATA[A diversified developer who lives and works in Europe building nice things. On this blog I post not only programming stuff. You can also find me on GitHub.]]></description><link>https://ilyagru.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 16 Jan 2022 14:35:56 GMT</lastBuildDate><item><title><![CDATA[My favourite React (Native) project architecture]]></title><description><![CDATA[I have seen and used lots of different architectures for a React (Native) project, but I prefer the modular one which evolved a little in my hands, as of January 2022. Here is a quick overview.]]></description><link>https://ilyagru.github.io/my-favourite-react-native-project-architecture</link><guid isPermaLink="false">https://ilyagru.github.io/my-favourite-react-native-project-architecture</guid><pubDate>Sat, 15 Jan 2022 22:14:10 GMT</pubDate><content:encoded>&lt;p&gt;I have seen and used lots of different architectures for a React (Native) project, but I prefer the modular one which evolved a little in my hands, as of January 2022. Here is a quick overview.&lt;/p&gt;
+&lt;h2&gt;Based on experience&lt;/h2&gt;
+&lt;p&gt;Throughout the years, I have seen many architectures and had various React projects, built multiple apps, big and small. Most of them used pretty standard, e.g. based on routes, file types or features. But from the experience, the modular architecture has served me very well.&lt;/p&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: my approach works for both React and React Native projects, but there are little differences.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: I will be using the ‘structure’ and ‘architecture’ words interchangeably for simplicity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Of course, nowadays, the architecture and file structure is rather dictated by the stack and technologies used. For example, Gatsby.js or Next.js propose their own way of doing a React project. Redux gives distinction between Container (smart) and Presentational (dumb) components. That is totally fine too, but with this, the structure is not universal enough, especially if you want to migrate to React Hooks, for example.&lt;/p&gt;
+&lt;p&gt;For a bare React or React Native project, the modular architecture works well because the project becomes very testable, composable, without any extra complexity. So there is no learning curve for it. You can get it, just opening the repository. It is a good one because it also becomes easy to maintain and develop new features. And advanced techniques can play well too - e.g. module splitting. For instance, if the user is not logged in, there is no need to load and parse all available modules which are not reachable without logging in.&lt;/p&gt;
+&lt;p&gt;My vision of the architecture is a bit customised and adapted for even greater universality and integrity. And what is important is that it is based on continuous iterations.&lt;/p&gt;
+&lt;p&gt;Let’s take a look at such a project, it is a React Native project, but it works nice for web projects too, taking into account the platform differences, of course. There are some considerations underneath. Look &lt;code class=&quot;language-text&quot;&gt;(1)&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;(2)&lt;/code&gt; etc. for footnotes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have been using TypeScript for all projects by default, so the file extensions are in accordance.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── .circleci (CI configuration to run test and lint or similar folders)
+├── .github
+|   ├── PULL_REQUEST_TEMPLATE.md
+├── assets (fonts and global images)
+├── android (native parts of the app)
+├── ios (native parts of the app)
+├── node_modules
+├── scripts (scripts for development, CI, downloading/generating GraphQL schemas)
+|   ├── downloadSchema.ts
+├── src
+|   ├── __generated__ (1)
+|   |   ├── localModels.tsx
+|   |   ├── remoteModels.tsx
+|   ├── jest (test specific files and helpers) (2)
+|   ├── components (basic ui atoms and molecules, can be used throughout the app) (3)
+|   |   ├── Button
+|   |   |   ├── index.tsx (entry file for the component)
+|   |   |   ├── Button.test.tsx (test file should have the folder name)
+|   |   |   ├── Button.styles.[css|ts] (styles can be extracted, optional)
+|   |   ├── TextField
+|   |   |   ├── index.tsx
+|   |   |   ├── TextField.test.tsx
+|   |   |   ├── TextField.styles.[css|ts]
+|   |   ├── index.ts (entry file for easier re-exporting, optional)
+|   ├── hocs (universal higher order components)
+|   |   ├── withPermissions.ts
+|   |   ├── withPermissions.test.ts
+|   ├── hooks (custom React Hooks)
+|   |   ├── useAsyncFnOnMount.ts
+|   |   ├── useAsyncFnOnMount.test.ts
+|   ├── context (React Context modules and their providers)
+|   |   ├── PermissionsContext.ts  (or both under Permissions/)
+|   |   ├── PermissionsProvider.ts
+|   ├── redux (4)
+|   ├── modules
+|   |   ├── common
+|   |   |   ├── screens
+|   |   |   |   ├── CommonLoadingScreen.tsx
+|   |   ├── auth
+|   |   |   ├── components (local components used only for the current module)
+|   |   |   |   ├── AuthBiggerButton.tsx
+|   |   |   ├── screens
+|   |   |   |   ├── AuthSignInScreen.tsx
+|   |   |   |   ├── AuthSignUpScreen.tsx
+|   |   |   |   ├── AuthForgotPasswordScreen (in case of multiple files, can be a folder)
+|   |   |   |   |   ├── index.tsx
+|   |   |   |   |   ├── AuthForgotPasswordScreen.test.tsx
+|   |   |   ├── ... (other things like specific queries, very local helpers, .etc)
+|   |   ├── dashboard
+|   |   ├── profile
+|   |   ├── developer (module for debugging purposes, screens hidden in Production)
+|   ├── navigation (navigation setup and utils)
+|   |   ├── components (navigation components, used in the navigators)
+|   |   ├── navigators
+|   |   |   ├── AuthStackNavigator
+|   |   |   |   ├── AuthRoute.ts (routes for the Auth module and types for screens)
+|   |   |   |   ├── index.tsx  (Auth navigator)
+|   |   |   ├── DashboardStackNavigator
+|   |   |   |   ├── DashboardRoute.ts
+|   |   |   |   ├── index.tsx
+|   |   |   ├── ProfileStackNavigator
+|   |   |   |   ├── ProfileRoute.ts
+|   |   |   |   ├── index.tsx
+|   |   |   ├── DeveloperStackNavigator
+|   |   |   |   ├── ProfileRoute.ts
+|   |   |   |   ├── index.tsx
+|   |   |   ├── ModalStackNavigator
+|   |   |   |   ├── ModalRoute.ts
+|   |   |   |   ├── index.tsx
+|   |   |   ├── RootStackNavigator
+|   |   |   |   ├── RootRoute.ts (app-level routes)
+|   |   |   |   ├── index.tsx (main navigator)
+|   ├── services (SDKs, wrappers and abstractions of services)
+|   |   ├── graphql (all graphql queries should be extracted into here) (5)
+|   |   |   ├── remote (schema, queries and mutations for backend communication)
+|   |   |   |   ├── fragments
+|   |   |   |   ├── mutations
+|   |   |   |   ├── queries
+|   |   |   |   ├── schema.graphql
+|   |   |   ├── local (local schema, queries and mutations)
+|   |   |   ├── index.ts (client)
+|   |   ├── EventTracking
+|   |   |   ├── EventTracking.test.ts
+|   |   |   ├── index.ts (main or entry file)
+|   |   ├── GeolocationService
+|   |   |   ├── GeolocationService.test.ts
+|   |   |   ├── index.ts
+|   |   ├── Sentry.ts
+|   |   ├── Stripe.ts
+|   |   ├── EventListener.ts
+|   ├── international
+|   |   ├── locales
+|   |   |   ├── en.json
+|   |   |   ├── pl.json
+|   |   |   ├── index.ts (common import of all locales, optional)
+|   |   ├── index.ts (setup file, e.g. i18n)
+|   ├── typings (TypeScript declaration files for packages missing them)
+|   |   ├── react-native-config.d.ts
+|   ├── utils (helpers and utils used across the modules, should be thoroughly tested) (6)
+|   |   ├── constants.ts (AsyncStorage keys, URLs, etc.)
+|   |   ├── authUtils.ts
+|   |   ├── authUtils.test.ts
+|   |   ├── systemUtils.ts
+|   |   ├── systemUtils.test.ts
+|   |   ├── stringUtils.ts
+|   |   ├── stringUtils.test.ts
+|   |   ├── transformSearchResultsIntoList.ts
+|   |   ├── transformSearchResultsIntoList.test.ts
+|   |   ├── index.ts (common import of all utils, optional)
+|   ├── index.tsx (the root component of the app)
+├── .env.development (development environment constants)
+├── .env.staging (staging environment constants)
+├── .env.production (production environment constants)
+├── graphql.codegen.yml (GraphQL code generation setup)
+├── index.js (main entry file)
+├── package.json (dependencies, Jest setup, other options)
+├── babel.config.js
+├── jest.setup.js (Adapter setup and importing mocks, polifills)
+├── jest.config.js
+├── react-native.setup.js
+├── metro.config.js
+├── lint-staged.config.js
+├── tsconfig.json
+├── .prettierrc.js
+├── .prettierignore
+├── .gitignore
+├── .eslintrc.js
+├── tsconfig.json
+├── yarn.lock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;The &lt;code class=&quot;language-text&quot;&gt;__generated__/&lt;/code&gt; folder can be used for Relay or GraphQL generated types, for example.&lt;/li&gt;
+&lt;li&gt;The &lt;code class=&quot;language-text&quot;&gt;jest&lt;/code&gt; can also be used for &lt;code class=&quot;language-text&quot;&gt;__fixtures__/&lt;/code&gt; or test helpers. Mock implementations should ideally be placed here in &lt;code class=&quot;language-text&quot;&gt;__mocks__/&lt;/code&gt;, in the same folder at the node_modules level.&lt;/li&gt;
+&lt;li&gt;The &lt;code class=&quot;language-text&quot;&gt;components/&lt;/code&gt; folder can optionally have the &lt;code class=&quot;language-text&quot;&gt;ui/&lt;/code&gt; folder which should contain all the universal components and some other folders for more complex components, for example &lt;code class=&quot;language-text&quot;&gt;Form&lt;/code&gt; which is also universal but consists of smaller components. This is very similar to atoms/molecules/organisms principle.&lt;/li&gt;
+&lt;li&gt;There are many ways to structure Redux specific files, for example, based on modules or based actions/reducers. Ideally this folder structure should follow principles, mentioned in this article, but also refer to Redux docs for details.&lt;/li&gt;
+&lt;li&gt;GraphQL allows defining multiple schemas and use them in the app, that is why remote/local separation is helpful. The remote schema is used for backend API and the local one can complement the remote one and can be used for typing and saving search filters or combined types, for example. So next time when implementing a type/model which, let’s say, consists of 2 partial backend types, consider using the local schema for that. Together with GraphQL codegen, it is a very powerful tool. A few examples:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;graphql&quot;&gt;&lt;pre class=&quot;language-graphql&quot;&gt;&lt;code class=&quot;language-graphql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;DashboardSearchFilterOutputType&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;showOnlyOpenRestaurants&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token scalar&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;locationId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token scalar&quot;&gt;Int&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ThemeColorType&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;DARK&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;LIGHT&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModuleSource&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;COMMON&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;AUTH&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;DASHBOARD&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;PROFILE&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;DEVELOPER&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;The &lt;code class=&quot;language-text&quot;&gt;utils/&lt;/code&gt; folder can be structured freely to fit your needs. If a helper is a big one, consider a dedicated file for it. If the helpers take just a few lines, they can go all in one relevant file.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;This also shows common naming for files. Ideally, each folder should contain the entry file, usually called &lt;code class=&quot;language-text&quot;&gt;index.ts&lt;/code&gt;. Other files’ names in the folder should start with the module name. It helps to read the code even better. When importing, strive to preserve the full name.&lt;/p&gt;
+&lt;p&gt;If you find yourself using a module-specific component in different places/modules throughout the app, it should be made universal and moved to common components then.&lt;/p&gt;
+&lt;p&gt;Each module might not have the entry file because all screens are typically of equal importance, that is totally fine.&lt;/p&gt;
+&lt;p&gt;If the project has some screens which are shared and used in different modules, for example &lt;code class=&quot;language-text&quot;&gt;LoadingScreen&lt;/code&gt;, consider creating a module called &lt;code class=&quot;language-text&quot;&gt;common/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For my latest projects, I avoid using Redux altogether because it increases complexity exponentially. React Hooks or Context are a very concise and expressive way, so Container components become redundant.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;It goes without saying, the structure might differ depending on specific needs of the app. Feel free to extend or adapt it even further to fit your app needs. If in doubt, refer to one of the following JavaScript style guides or libraries’ best practices.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/airbnb/javascript&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://github.com/airbnb/javascript&lt;/a&gt; - from Airbnb&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/airbnb/javascript/tree/master/react&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://github.com/airbnb/javascript/tree/master/react&lt;/a&gt; - from Airbnb for React&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://standardjs.com&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://standardjs.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When you introduce a convention or a style guide rule, it is more important to follow it consistently than the rule itself. Each team member should stick to it after the rule has been introduced. Later refactoring would be a dream in this case.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Week Section List in React Native (TypeScript)]]></title><description><![CDATA[A quick guide on how to create a universal week view list in React Native and have it typed with TypeScript so that a day in the week could consist of different types of data.]]></description><link>https://ilyagru.github.io/week-section-list-in-react-native-typescript</link><guid isPermaLink="false">https://ilyagru.github.io/week-section-list-in-react-native-typescript</guid><pubDate>Tue, 04 Aug 2020 12:59:00 GMT</pubDate><enclosure url="http://ilyagru.github.io/static/a06eb3e42c5af7114631d87305f18e41/week-section-list-in-react-native-typescript-featured-image.png" length="0" type="image/png"/><content:encoded>&lt;h2&gt;Assignment&lt;/h2&gt;
 &lt;p&gt;Imagine we have a React Native app and let’s say that we wanted to display a list of events in a form of the week view, where each week should have its header with start date or number of the week and exactly 7 days. Each day could have a number of events (no events at all or a few). Additionally, it would be useful to make it a generic component to be able to reuse it if we want to display a week view with another type of data e.g. todos.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;

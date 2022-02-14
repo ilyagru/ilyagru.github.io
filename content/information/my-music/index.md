@@ -7,7 +7,7 @@ summary: The music that I listen to.
   <iframe
     allow="autoplay *; encrypted-media *;"
     style="overflow: hidden; background: transparent;"
-    sandbox="allow-forms allow-popups allow-same-origin allow-scripts"
-    src="https://embed.music.apple.com/pl/playlist/feeling-so-much-love/pl.u-V9D7v0NujMyl1b?app=music">
+    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+    src="https://embed.music.apple.com/pl/playlist/true-deep/pl.u-9N9LXv4uym867A">
   </iframe>
 </p>

@@ -1,9 +1,9 @@
 ---
-title: What I already built
+title: What I have already built
 summary: Projects that I have already built.
 ---
 
-- <a href="https://angel.co/company/gistasy" rel="noopener norefferer" target="_blank">Gistasy</a> – Mobile-first social network for programmers [WIP]
+- <a href="https://angel.co/company/gistasy" rel="noopener norefferer" target="_blank">Gistasy</a> – Mobile-first social network for programmers
 - <a href="https://github.com/ilyagru/AUTOmation" rel="noopener norefferer" target="_blank">AUTOmation</a> – Demo app for the "High Mobility Hack" hackathon
 - <a href="https://ilyagru.github.io/crispycrypto" rel="noopener norefferer" target="_blank">CrispyCrypto</a> – iOS game about cryptocurrencies
 - <a href="https://itunes.apple.com/us/app/plcvr/id1415539332" rel="noopener norefferer" target="_blank">PLCVR</a> – Simple app for helping you overlay images

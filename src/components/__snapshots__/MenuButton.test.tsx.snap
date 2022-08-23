@@ -2,7 +2,7 @@
 
 exports[`MenuButton should render correctly 1`] = `
 <button
-  className="sc-bdvvtL irLYvN"
+  className="sc-bczRLJ hMkHim"
   onClick={[MockFunction]}
 >
   menu

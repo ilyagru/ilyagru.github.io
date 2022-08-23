@@ -6,6 +6,16 @@ import { PoseGroup } from 'react-pose';
 import Switch from './Switch';
 import { NavContainer, Nav, NavList, NavLink } from './Navbar.components';
 
+const navbarQuery = graphql`
+  query NavbarQuery {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`;
+
 type Props = {
   isMenuOpen?: boolean;
   toggleTheme: () => void;
@@ -68,15 +78,5 @@ function Navbar({ isMenuOpen = false, toggleTheme, isDark }: Props) {
     />
   );
 }
-
-const navbarQuery = graphql`
-  query NavbarQuery {
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-  }
-`;
 
 export default Navbar;

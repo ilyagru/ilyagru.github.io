@@ -1,11 +1,14 @@
 {
-  "name": "gruzhevstasy",
+  "name": "ilyagru",
   "private": true,
   "description": "A blog of Ilya Gruzhevski",
   "version": "4.1.0",
   "author": "Ilya Gruzhevski",
   "bugs": {
     "url": "https://github.com/ilyagru/ilyagru.github.io/issues"
+  },
+  "engines": {
+    "node": ">=18.7.0"
   },
   "dependencies": {
     "gatsby": "^4.4.0",
@@ -81,6 +84,9 @@
     "ts-jest": "^27.1.2",
     "typescript": "^4.5.4"
   },
+  "resolutions": {
+    "@types/react": "^17.0.38"
+  },
   "homepage": "https://github.com/ilyagru/ilyagru.github.io",
   "keywords": [],
   "license": "Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
@@ -92,19 +98,19 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc",
     "test": "jest",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "deploy": "npm run build && gh-pages -d public -b master"
+    "deploy": "yarn build && gh-pages -d public -b master"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run typecheck && npm run test",
-      "pre-push": "npm run lint && npm run typecheck && npm run test"
+      "pre-commit": "yarn lint && yarn typecheck && yarn test",
+      "pre-push": "yarn lint && yarn typecheck && yarn test"
     }
   }
 }

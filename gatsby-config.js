@@ -3,7 +3,7 @@ module.exports = {
     title: `ilyagru`,
     author: `Ilya Gruzhevski`,
     description: `A diversified developer who lives and works in Europe building nice things. On this blog I post not only programming stuff. You can also find me on GitHub.`,
-    siteUrl: `https://ilyagru.github.io`,
+    siteUrl: `https://ilyagru.com`,
     social: {
       github: `ilyagru`,
       twitter: `ilyagruu`,

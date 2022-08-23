@@ -113,7 +113,7 @@ During the first two weeks, the application even managed to get into the TOP 25 
 ### Results
 
 1. [Remame app](https://itunes.apple.com/us/app/remame/id1186430894)
-2. [Remame website](https://ilyagru.github.io/remame/)
+2. [Remame website](https://ilyagru.com/remame/)
 
 Thank you very much to those who read to the end! I hope that my article turned out to be at least a little useful to you.
 If you have any suggestions or questions, write to me via Telegram, I will try to answer. I also do Frontend development (I write in JavaScript, Vue.js, or React.js). I will be very grateful if you support me in my adventures by downloading Remame on the App Store.

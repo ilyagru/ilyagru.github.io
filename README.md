@@ -2,7 +2,7 @@
 
 ![Status Check](https://github.com/ilyagru/ilyagru.github.io/workflows/Status%20Check/badge.svg) ![Gatsby Publish](https://github.com/ilyagru/ilyagru.github.io/workflows/Gatsby%20Publish/badge.svg) ![version](https://img.shields.io/badge/version-4.1.0-blue)
 
-[ilyagru.github.io](https://ilyagru.github.io)
+[ilyagru.com](https://ilyagru.com)
 
 Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby configuration files you might need to get up and running.
 
@@ -11,7 +11,7 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 1.  **Start developing**
 
     ```bash
-    npm start
+    yarn start
     ```
 
 1.  **Open the source code and start editing**
@@ -37,7 +37,7 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 1.  **Run tests**
 
     ```bash
-    npm test
+    yarn test
     ```
 
 1.  **Deploy**

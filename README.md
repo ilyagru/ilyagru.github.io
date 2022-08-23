@@ -1,4 +1,4 @@
-# Gruzhevstasy (personal website & blog)
+# ilyagru (personal website & blog)
 
 ![Status Check](https://github.com/ilyagru/ilyagru.github.io/workflows/Status%20Check/badge.svg) ![Gatsby Publish](https://github.com/ilyagru/ilyagru.github.io/workflows/Gatsby%20Publish/badge.svg) ![version](https://img.shields.io/badge/version-4.1.0-blue)
 
@@ -23,13 +23,13 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 1.  **Production**
 
     ```bash
-    npm run build
+    yarn build
     ```
 
 1.  **Test locally**
 
     ```bash
-    npm run serve
+    yarn serve
     ```
 
     The site is now running at `http://localhost:9000`!
@@ -43,7 +43,7 @@ Uses a custom Gatsby's blog starter. This starter ships with the main Gatsby con
 1.  **Deploy**
 
     ```bash
-    npm run deploy
+    yarn deploy
     ```
 
     For a repository named like ilyagru.github.io. Deploying automatically by Github Actions on merging to develop.

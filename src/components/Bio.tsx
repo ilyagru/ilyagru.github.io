@@ -4,6 +4,25 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { rhythm } from '../utils/typography';
 
+const bioQuery = graphql`
+  query BioQuery {
+    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        gatsbyImageData(width: 80, height: 80, layout: FIXED)
+      }
+    }
+    site {
+      siteMetadata {
+        author
+        social {
+          github
+          twitter
+        }
+      }
+    }
+  }
+`;
+
 type Props = {
   slug?: string;
 };
@@ -79,24 +98,5 @@ function Bio({ slug = '' }: Props) {
     />
   );
 }
-
-const bioQuery = graphql`
-  query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-      childImageSharp {
-        gatsbyImageData(width: 80, height: 80, layout: FIXED)
-      }
-    }
-    site {
-      siteMetadata {
-        author
-        social {
-          github
-          twitter
-        }
-      }
-    }
-  }
-`;
 
 export default Bio;

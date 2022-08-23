@@ -3,6 +3,18 @@ import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { useTheme } from 'styled-components';
 
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`;
+
 type Props = {
   description?: string;
   lang?: string;
@@ -99,15 +111,3 @@ function SEO({ description, lang = 'en', meta = [], keywords = [], title, image 
 }
 
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`;

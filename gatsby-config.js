@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gruzhevstasy`,
+    title: `ilyagru`,
     author: `Ilya Gruzhevski`,
     description: `A diversified developer who lives and works in Europe building nice things. On this blog I post not only programming stuff. You can also find me on GitHub.`,
     siteUrl: `https://ilyagru.github.io`,
     social: {
       github: `ilyagru`,
-      twitter: `ilyagruzhevski`,
+      twitter: `ilyagruu`,
     },
   },
   plugins: [
@@ -142,7 +142,7 @@ module.exports = {
             }
           `,
             output: '/rss.xml',
-            title: 'Gruzhevstasy RSS feed',
+            title: 'ilyagru RSS feed',
           },
         ],
       },
@@ -150,8 +150,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gruzhevstasy`,
-        short_name: `Gruzhevstasy`,
+        name: `ilyagru`,
+        short_name: `ilyagru`,
         start_url: `/`,
         theme_color: '#DAA520',
         background_color: `#ffffff`,

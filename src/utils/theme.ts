@@ -59,8 +59,8 @@ const baseTheme = {
 const lightTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
-  accentColorString: '#DAA520',
-  accentColor: 'var(--accent-color, #DAA520)',
+  accentColorString: '#263d34',
+  accentColor: 'var(--accent-color, #263d34)',
   mainBackgroundColor: 'var(--main-background-color, #fff)',
   grayColor: 'var(--gray-color, rgba(0,0,0,0.59))',
   textColor: 'var(--text-color, #000)',
@@ -73,8 +73,8 @@ const lightTheme: DefaultTheme = {
   commentColor: 'var(--comment-color, #B5B5B6)',
   keywordColor: 'var(--keyword-color, #DAA520)',
   numberColor: 'var(--number-color, #A37ACC)',
-  stringColor: 'var(--string-color, #AAD273)',
-  attrValueColor: 'var(--attr-value-color, #AAD273)',
+  stringColor: 'var(--string-color, #263d34)',
+  attrValueColor: 'var(--attr-value-color, #263d34)',
   punctuationColor: 'var(--punctuation-color, #8DADE1)',
   booleanColor: 'var(--boolean-color, #A37ACC)',
   functionColor: 'var(--function-color, #F28779)',
@@ -86,8 +86,8 @@ const lightTheme: DefaultTheme = {
 const darkTheme: DefaultTheme = {
   ...baseTheme,
   // Colors
-  accentColorString: '#E89456',
-  accentColor: 'var(--accent-color, #E89456)',
+  accentColorString: '#6fa590',
+  accentColor: 'var(--accent-color, #6fa590)',
   mainBackgroundColor: 'var(--main-background-color, #222529)',
   grayColor: 'var(--gray-color, rgba(191, 191, 191, 0.59))',
   textColor: 'var(--text-color, #fff)',
@@ -100,8 +100,8 @@ const darkTheme: DefaultTheme = {
   commentColor: 'var(--comment-color, #78787D)',
   keywordColor: 'var(--keyword-color, #E89456)',
   numberColor: 'var(--number-color, #A897FF)',
-  stringColor: 'var(--string-color, #bae67e)',
-  attrValueColor: 'var(--attr-value-color, #bae67e)',
+  stringColor: 'var(--string-color, #6fa590)',
+  attrValueColor: 'var(--attr-value-color, #6fa590)',
   punctuationColor: 'var(--punctuation-color, #89DDFF)',
   booleanColor: 'var(--boolean-color, #A897FF)',
   functionColor: 'var(--function-color, #DC7572)',

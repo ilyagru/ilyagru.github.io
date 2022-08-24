@@ -3,7 +3,7 @@ import { rhythm } from './typography';
 
 const GlobalStyle = createGlobalStyle`
   .light {
-    --accent-color: #DAA520;
+    --accent-color: #263d34; /* goodwood green */
     --main-background-color: #fff;
     --gray-color: rgba(0,0,0,0.59);
     --text-color: #000;
@@ -15,8 +15,8 @@ const GlobalStyle = createGlobalStyle`
     --comment-color: #B5B5B6;
     --keyword-color: #DAA520;
     --number-color: #A37ACC;
-    --string-color: #AAD273;
-    --attr-value-color: #AAD273;
+    --string-color: #263d34;
+    --attr-value-color: #263d34;
     --punctuation-color: #8DADE1;
     --boolean-color: #A37ACC;
     --function-color: #F28779;
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .dark {
-    --accent-color: #E89456;
+    --accent-color: #6fa590;
     --main-background-color: #222529;
     --gray-color: rgba(191, 191, 191, 0.59);
     --text-color: #fff;
@@ -38,8 +38,8 @@ const GlobalStyle = createGlobalStyle`
     --comment-color: #78787D;
     --keyword-color: #E89456;
     --number-color: #A897FF;
-    --string-color: #bae67e;
-    --attr-value-color: #bae67e;
+    --string-color: #6fa590;
+    --attr-value-color: #6fa590;
     --punctuation-color: #89DDFF;
     --boolean-color: #A897FF;
     --function-color: #DC7572;

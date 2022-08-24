@@ -153,7 +153,7 @@ module.exports = {
         name: `ilyagru`,
         short_name: `ilyagru`,
         start_url: `/`,
-        theme_color: '#DAA520',
+        theme_color: '#263d34',
         background_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,

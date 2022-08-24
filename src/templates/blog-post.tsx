@@ -36,6 +36,21 @@ function BlogPostTemplate({ data, pageContext, location }: Props) {
       </article>
       <br />
       <p>
+        <iframe
+          src="https://github.com/sponsors/ilyagru/button"
+          title="Sponsor ilyagru"
+          height="32"
+          width="115"
+          style={{
+            border: 0,
+            minHeight: '32px',
+            width: '115px',
+            height: '32px',
+            marginBottom: 0,
+            verticalAlign: 'middle',
+          }}
+        />
+        {' | '}
         <a href={twitterShareUrl} target="_blank" rel="nofollow noopener noreferrer">
           Tweet this
         </a>

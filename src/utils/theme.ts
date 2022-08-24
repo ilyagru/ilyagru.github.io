@@ -65,7 +65,7 @@ const lightTheme: DefaultTheme = {
   grayColor: 'var(--gray-color, rgba(0,0,0,0.59))',
   textColor: 'var(--text-color, #000)',
   textColorReversed: 'var(--text-color-reversed, #fff)',
-  accentBackgroundColor: 'var(--accent-background-color, #FFFAEF)',
+  accentBackgroundColor: 'var(--accent-background-color, rgba(38,61,52, 0.2))',
   backgroundColor: 'var(--background-color, rgb(248, 248, 250))',
   backgroundColorTransparent: 'var(--background-color-transparent, rgba(248,248,255,.7))',
 
@@ -92,7 +92,7 @@ const darkTheme: DefaultTheme = {
   grayColor: 'var(--gray-color, rgba(191, 191, 191, 0.59))',
   textColor: 'var(--text-color, #fff)',
   textColorReversed: 'var(--text-color-reversed, #000)',
-  accentBackgroundColor: 'var(--accent-background-color, rgba(232, 146, 84, 0.09))',
+  accentBackgroundColor: 'var(--accent-background-color, rgba(111,165,144, 0.2))',
   backgroundColor: 'var(--background-color, #454B52)',
   backgroundColorTransparent: 'var(--background-color-transparent, rgba(70,70,77,.7))',
 

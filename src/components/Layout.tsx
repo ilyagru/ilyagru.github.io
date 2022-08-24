@@ -47,7 +47,7 @@ function Layout({ title, children, location }: Props) {
         <main>{children}</main>
         <footer>
           <TitleLink title={`${title} `} />
-          &copy; {new Date().getFullYear()}, from Europe with 🧡
+          &copy; {new Date().getFullYear()}, from Europe with 💚
         </footer>
       </LayoutContainer>
     </ThemeProvider>

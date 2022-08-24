@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     --gray-color: rgba(0,0,0,0.59);
     --text-color: #000;
     --text-color-reversed: #fff;
-    --accent-background-color: #FFFAEF;
+    --accent-background-color: rgba(38,61,52, 0.2);
     --background-color: rgb(248, 248, 250);
     --background-color-transparent: rgba(248,248,255,.7);
 
@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     --gray-color: rgba(191, 191, 191, 0.59);
     --text-color: #fff;
     --text-color-reversed: #000;
-    --accent-background-color: rgba(232, 146, 84, 0.09);
+    --accent-background-color: rgba(111,165,144, 0.2);
     --background-color: #454B52;
     --background-color-transparent: rgba(70,70,77,.7);
 
